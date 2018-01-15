@@ -27,17 +27,26 @@
 				</div>
 			</div>
 		</div>
-	</div> 
+
+	</div>
+	<locations-component></locations-component>
+	<testimonials-component></testimonials-component>
+
+
   </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar/Navbar.vue'
+import Testimonials from './components/Testimonials.vue'
+import Locations from './components/Locations/Locations.vue'
 
 export default {
   name: 'app',
   components: {
-    NavbarComponent: Navbar, 
+    NavbarComponent: Navbar,
+		TestimonialsComponent: Testimonials,
+		LocationsComponent: Locations,
   },
   data () {
     return {
@@ -49,7 +58,7 @@ export default {
           // {link: `#testimonials`, title: 'Testimonials'},
           {link:  `#locations`, title: "Locations"},
           {link: `#contact`, title: 'Contact'},
-          
+
       ]
     }
   }
