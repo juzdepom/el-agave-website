@@ -19,7 +19,7 @@
 
 						<div class="about-p text-center">
 							<span class="sub-title"></span>
-							<span class="fa fa-cutlery" aria-hidden="true" style="color:#A51D21"></span>
+							<span class="fa fa-cutlery" aria-hidden="true" style="color:#F7EE24"></span>
 							<span class="sub-title"></span>
 						</div>
 						<p><i>Family Owned</i></p>

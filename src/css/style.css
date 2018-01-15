@@ -320,7 +320,7 @@ span.sub-title {
     display: inline-block;
     width: 100px;
     height: 4px;
-    background-color: #A51D21;
+    background-color: #F7EE24;
     margin: 0px 13px;
     /*-ms-transform: rotate(45deg);
      -webkit-transform: rotate(45deg); */
@@ -337,7 +337,7 @@ span.sub-title {
 /*-- banner-top --*/
 .agile-banner-main{
     /* background: url(../images/b1.jpg) no-repeat 0px 0px; */
-    background: url(../images/background-chips.jpg) no-repeat 0px 0px;
+    background: url(../images/bg-samish.png) no-repeat 0px 0px;
 	 background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
