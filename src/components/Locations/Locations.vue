@@ -14,7 +14,7 @@
 			</div>
 			<div class="col-md-6 about-right about-right-flex">
 				<div class="about-bottom-grid">
-                    <map-component :location="clubHouse"></map-component>
+                    <map-component :location="clubhouse"></map-component>
 				</div>
 				<div class="about-bottom-text ab1">
 					<h4 class="title1">{{clubhouse.address}}
@@ -26,11 +26,11 @@
             <div class="col-md-6 about-right about-right-flex">
 				<div class="about-bottom-text">
 					<h4 class="title1">
-                        {{harriss.address}}<br>{{harriss.city}}, {{harris.state}}, {{harris.state}}
+                        {{harris.address}}<br>{{harris.city}}, {{harris.state}}, {{harris.state}}
                         <br><br>{{harris.number}}</h4>
 				</div>
 				<div class="about-bottom-grid">
-                    <map-component :location="harriss"></map-component>
+                    <map-component :location="harris"></map-component>
 				</div>
 			</div>
 

@@ -4,12 +4,12 @@
     src: url('../fonts/burrito.TTF')
 }
 
-body { 
+body {
 	padding: 0;
 	margin: 0;
   background: #fff;
   font-family: 'PT Sans', sans-serif;
- 
+
 }
 body a {
 	transition:.5s ease-in;
@@ -37,7 +37,7 @@ input[type="button"], input[type="submit"], button.btn ,i.fa.icons:hover,.footer
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
-    font-family: 'Rancho', cursive;   
+    font-family: 'Rancho', cursive;
 }
 ul {
 	margin: 0;
@@ -112,8 +112,8 @@ box-shadow: 0px 11px 54px -9px rgba(0,0,0,0.75); */
     outline: none;
 }
 
-/*-- //main --*/ 
-/*-- header --*/ 
+/*-- //main --*/
+/*-- header --*/
 .header-main {
     background:#a51c21;
     position: absolute;
@@ -229,12 +229,12 @@ box-shadow: 0px 11px 54px -9px rgba(0,0,0,0.75); */
 }
 .navbar-right {
     float: left!important;
-    margin: 10px 0 0; 
+    margin: 10px 0 0;
     text-align: center;
 }
 .list-right {
   float: right;
- 
+
 }
 .list-right li {
  padding: 26px 0 30px;
@@ -250,7 +250,7 @@ box-shadow: 0px 11px 54px -9px rgba(0,0,0,0.75); */
 .list-right> li > a:hover, .list-right> li > a:focus{
  color: #9cd5c4;
  text-decoration: none;
- 
+
 }
 ul.list-right p {
   display: inline;
@@ -259,7 +259,7 @@ ul.list-right p {
 }
 .list-icon {
 
-color: #9cd5c4;	
+color: #9cd5c4;
 font-size: 1.5em !important;
 margin: 0 10px;
 }
@@ -269,10 +269,10 @@ font-size: 15px;
  }
 
 /*-- //Navbar --*/
-/*-- //header --*/ 
+/*-- //header --*/
 .banner-layer{
     background: rgba(0, 0, 0, 0.41);
-  
+
 }
 .banner-layer,.agile-banner-main{
     min-height:794px;
@@ -280,7 +280,7 @@ font-size: 15px;
 .section{
     padding:80px 0;
 }
-/* .section:after { 
+/* .section:after {
     content: '';
     position: absolute;
     background: url(../images/r.png)repeat center 0px;
@@ -291,7 +291,7 @@ font-size: 15px;
     width: 100%;
     height: 2%;
 }*/
-/*-- banner-text --*/ 
+/*-- banner-text --*/
 .header-main{
     position: absolute;
     top: 0;
@@ -338,14 +338,14 @@ span.sub-title {
 .agile-banner-main{
     /* background: url(../images/b1.jpg) no-repeat 0px 0px; */
     background: url(../images/background-chips.jpg) no-repeat 0px 0px;
-	 background-size: cover;	
-	-webkit-background-size: cover;	
+	 background-size: cover;
+	-webkit-background-size: cover;
 	-moz-background-size: cover;
-	-o-background-size: cover;		
+	-o-background-size: cover;
 	-moz-background-size: cover;
 	position:relative;
 }
-/*-- //banner-top --*/ 
+/*-- //banner-top --*/
 .agile-banner-main .find-about a{
 	float:none!important;
 	color:#fff!important;
@@ -395,7 +395,7 @@ h3.modal-title {
     font-family: 'Yesteryear', cursive;
     font-size: 50px;
     text-align: center;
-    
+
 }
 button.close {
     background: #fff
@@ -503,7 +503,7 @@ h4.price-clr {
     color: #00bb83;
 }
 /*-------*/
-#myList li{ 
+#myList li{
 	display: none;
 	list-style-type:none;
 }
@@ -644,7 +644,7 @@ form.book-right2 {
 .form-right {
     float: right;
     width: 48%;
-} 
+}
 /*-- reservation --*/
 .book-right input[type="text"]{
     width: 100%;
@@ -742,7 +742,7 @@ form.book-right2 {
     -webkit-transition: .5s all;
     transition: .5s all;
     -moz-transition: .5s all;
-    background-color: #FAA026;
+    background-color: rgb(165, 29, 33);
 }
 .about-bottom-text:before {
     content: '';
@@ -750,7 +750,7 @@ form.book-right2 {
     bottom: -13px;
     left: 50%;
     z-index: 999;
-    border-top: 13px solid #faa026;
+    border-top: 13px solid rgb(165, 29, 33);
     border-right: 13px solid transparent;
     border-left: 13px solid transparent;
     -webkit-transition: .5s all;
@@ -760,7 +760,7 @@ form.book-right2 {
 .about-bottom-text.ab1:before {
     transform: rotate(180deg);
     -webkit-transform:rotate(180deg);
-    border-top: 13px solid #00bb83;
+    border-top: 13px solid #0e7758;
     border-right: 13px solid transparent;
     border-left: 13px solid transparent;
     bottom: 100%;
@@ -772,7 +772,7 @@ h4.title1 {
 }
 
 .about-bottom-text.ab1 {
-    background-color: #00bb83;
+    background-color: #0e7758;
     color: #fff;
 }
 
@@ -856,13 +856,13 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 background: #428bca;
 }
 /* //about-gallery */
-/*-- main menu--*/ 
+/*-- main menu--*/
 
 .agileinfo-tab-content1 {
     padding: 2em;
     background: rgba(255, 255, 255, 0.78);
     border: 1px dotted rgba(165, 28, 33, 0.57);
-  
+
 }
 .main-menu .nav-tabs {
     border: none;
@@ -875,7 +875,7 @@ background: #428bca;
     display: inline-block;
     float: none;
     margin: 0 0.5em;
-   
+
 }
 .menu-info .nav-tabs li a {
     padding: 0;
@@ -907,11 +907,11 @@ background: #428bca;
 	outline:none;
     color: #000;
 }
-.nav-tabs > li.active > a,.nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus { 
-    border: none; 
+.nav-tabs > li.active > a,.nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border: none;
 	outline:none;
 	background:#fff;
-	
+
 }
 .main-menu {
     padding: 5em 0;
@@ -932,12 +932,12 @@ background: #428bca;
 }
 /*-- //main-menu --*/
 
-/*-- testimonials--*/ 
+/*-- testimonials--*/
 .carousel-control.left,.carousel-control.right  {background:none;width:25px;}
 .carousel-control.left {left:-25px;}
 .carousel-control.right {right:-25px;}
 .broun-block {
-  
+
     padding-bottom: 34px;
 }
 .block-text {
@@ -999,7 +999,7 @@ background: #428bca;
 .person-text.rel {
     background: transparent;
 }
-/*-- testimonials--*/ 
+/*-- testimonials--*/
 
 /*-- contact--*/
 #contact h3.h3-w3l{
@@ -1237,28 +1237,28 @@ a.facebook:hover{
 	background:#fff;
 	color:#3b5998
 }
-a.twitter{ 
+a.twitter{
 	background:#1da1f2;
 }
 a.twitter:hover{
 	color:#1da1f2;
 	background:#fff;
 }
-a.dribble{ 
+a.dribble{
 	background:#ea4c89;
 
 }
-a.dribble:hover{ 
+a.dribble:hover{
 	color:#ea4c89;
 	background:#fff
 }
-a.vimeo{ 
+a.vimeo{
 	background:#1ab7ea;
 }
-a.vimeo:hover{ 
+a.vimeo:hover{
 	color:#1ab7ea;
 	background:#fff;
-} 
+}
 /*-- //social icons --*/
 /*--//footer--*/
 .footer_grid_bottom ul {
@@ -1345,7 +1345,7 @@ ul.w3_address li p {
     padding-right: 6em;
     margin-top: -8em;
 }
-/*-- //welcome --*/ 
+/*-- //welcome --*/
 /*-- slid --*/
 .slid {
     background: url(../images/b1.jpg)no-repeat center fixed;
@@ -1389,7 +1389,7 @@ ul.w3_address li p {
     text-indent: 100%;
     background: url(../images/totop.png) no-repeat 0px 0px;
   }
-  
+
   #toTopHover {
     width: 32px;
     height: 32px;
@@ -1420,7 +1420,7 @@ ul.w3_address li p {
     }
 }
 @media screen and (max-width: 1280px){
-    
+
     .contact-right {
         padding: 4em 3em 4.8em;
     }
@@ -1435,13 +1435,13 @@ ul.w3_address li p {
     }
 }
 @media screen and (min-width: 1081px){
-    
+
     .banner-btm{
         display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
         display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
         display: -ms-flexbox;      /* TWEENER - IE 10 */
         display: -webkit-flex;     /* NEW - Chrome */
-        display: flex;           
+        display: flex;
     }
     .banner-btm-g1,.banner-btm-g2 {
         -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
@@ -1546,13 +1546,13 @@ ul.w3_address li p {
     }
 }
 @media screen and (min-width: 992px){
-    
+
 .about-grid{
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;     /* NEW - Chrome */
-    display: flex;        
+    display: flex;
 }
 .about-right{
      -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
@@ -1567,15 +1567,15 @@ ul.w3_address li p {
     -moz-box-flex: 2;         /* OLD - Firefox 19- */
     width: 20%;               /* For old syntax, otherwise collapses. */
     -webkit-flex: 2;          /* Chrome */
-    -ms-flex: 2;   
+    -ms-flex: 2;
     flex:2;           /* IE 10 */
-    
+
 }
 .about-right,.about-bottom-text,.about-img2, .about-img1{
     -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
     -moz-box-flex: 1;         /* OLD - Firefox 19- */
      -webkit-flex: 1;          /* Chrome */
-    -ms-flex: 1;   
+    -ms-flex: 1;
     flex:1;           /* IE 10 */
 }
 .about-sub-grid,about-right-flex{
@@ -1584,7 +1584,7 @@ ul.w3_address li p {
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;     /* NEW - Chrome */
-    display: flex; 
+    display: flex;
 }
 }
 @media screen and (max-width: 991px){
@@ -1661,7 +1661,7 @@ ul.w3_address li p {
     .banner-btm-g1, .banner-btm-g2 {
         width: 87%;
     }
-        
+
 
 .about-bg {
         min-height: 300px;
@@ -1983,7 +1983,7 @@ ul.w3_address li p {
     p.sub-p {
         font-size: 16px;
         margin-top: 10px;
-    } 
+    }
     #showLess, #loadMore {
         width: 26%;
     }
@@ -2105,7 +2105,7 @@ ul.w3_address li p {
     }
     .w3_agileits-subscribe input[type="submit"] {
         width: 25%;
-    } 
+    }
     #showLess, #loadMore {
         width: 34%;
     }
@@ -2137,7 +2137,7 @@ ul.w3_address li p {
     .chef-right {
         padding: 1em 1em 0 1em;
     }
-        
+
 }
 @media screen and (max-width: 414px){
     .banner-info h3 {
@@ -2182,9 +2182,9 @@ ul.w3_address li p {
         width: 92%;
         margin: 0 auto;
     }
-} 
+}
 @media screen and (min-width: 385px){
-    
+
 .about-right{
     -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
    -moz-box-flex: 1;         /* OLD - Firefox 19- */
@@ -2197,7 +2197,7 @@ ul.w3_address li p {
    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
    -moz-box-flex: 1;         /* OLD - Firefox 19- */
     -webkit-flex: 1;          /* Chrome */
-   -ms-flex: 1;   
+   -ms-flex: 1;
    flex:1;           /* IE 10 */
 }
 .about-sub-grid,about-right-flex{
@@ -2206,7 +2206,7 @@ ul.w3_address li p {
    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
    display: -ms-flexbox;      /* TWEENER - IE 10 */
    display: -webkit-flex;     /* NEW - Chrome */
-   display: flex; 
+   display: flex;
 }
 }
 @media screen and (max-width: 384px){
@@ -2264,10 +2264,10 @@ ul.w3_address li p {
     }
     .slid-text {
         padding: 1em 2.3em;
-    } 
+    }
     h4.sub-title {
         font-size: 25px;
-    }   
+    }
     h3.w3layouts-title {
         font-size: 35px;
     }
@@ -2351,7 +2351,7 @@ ul.w3_address li p {
     h3.title-main {
         font-size: 32px;
     }
-    
+
     .navbar-nav > li {
         width: 42%;
     }
