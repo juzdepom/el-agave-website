@@ -4,6 +4,18 @@
     src: url('../fonts/burrito.TTF')
 }
 
+.shadow-up {
+    -webkit-box-shadow: 0px -9px 32px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -9px 32px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px -9px 32px -8px rgba(0,0,0,0.75);
+}
+
+.shadow-down {
+    -webkit-box-shadow: 0px 9px 32px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 9px 32px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px 9px 32px -8px rgba(0,0,0,0.75);
+}
+
 body {
 	padding: 0;
 	margin: 0;
@@ -116,8 +128,8 @@ box-shadow: 0px 11px 54px -9px rgba(0,0,0,0.75); */
 /*-- header --*/
 .header-main {
     background:#a51c21;
-    position: absolute;
     width: 100%;
+    position: fixed;
    top: 0;
    height: 80px;
 }
@@ -293,9 +305,8 @@ font-size: 15px;
 }*/
 /*-- banner-text --*/
 .header-main{
-    position: absolute;
     top: 0;
-    z-index: 99;
+    z-index: 1000;
     text-align: center;
     left: 0;
     width: 100%;
@@ -914,8 +925,14 @@ background: #428bca;
 
 }
 .main-menu {
+    border-top: 4px dashed yellow;
+    border-bottom: 4px dashed yellow;
+    /* -webkit-box-shadow: 0px -6px 32px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -6px 32px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px -6px 32px -8px rgba(0,0,0,0.75); */
     padding: 5em 0;
-    background:url(../images/mbg.png) no-repeat center fixed;
+    /* background:url(../images/mbg.png) no-repeat center fixed; */
+    background-color: rgb(126, 23, 27);
     background-size:cover;
 	min-height:564px;
 }
@@ -926,8 +943,10 @@ background: #428bca;
     margin-top: 25px;
 }
 .main-menu-bg {
-    background: rgba(255, 255, 255, 0.56);
-    opacity: 0.8;
+    border-radius: 10px;
+    /* border: 4px dotted yellow; */
+    background: #D0D7EC;
+    /* opacity: 0.8; */
     padding: 1em 3em 3em;
 }
 /*-- //main-menu --*/
@@ -1400,12 +1419,19 @@ ul.w3_address li p {
     -moz-opacity: 0;
     filter: alpha(opacity=0);
   }
+
 /*-- move top--*/
   /* -- Responsive code -- */
 @media screen and (max-width: 1600px){}
 @media screen and (max-width: 1440px){
     .about-bottom-text {
         padding: 5.85em 4em;
+    }
+    .banner-info h3 {
+        font-size: 3em;
+    }
+    #downArrow {
+        display: block;
     }
 }
 @media screen and (max-width: 1366px){
@@ -1420,6 +1446,7 @@ ul.w3_address li p {
     }
 }
 @media screen and (max-width: 1280px){
+
 
     .contact-right {
         padding: 4em 3em 4.8em;
@@ -1522,6 +1549,9 @@ ul.w3_address li p {
 }
 
 @media screen and (max-width: 1024px){
+    #downArrow {
+        display: none;
+    }
     .banner-info h3 {
         font-size: 3em;
     }
@@ -1842,7 +1872,7 @@ ul.w3_address li p {
         min-height: 580px;
     }
     .banner-info h3 {
-        margin: 38px 0 0;
+        margin: 54px 0 0;
         font-size: 3em;
     }
 }
@@ -1887,7 +1917,7 @@ ul.w3_address li p {
         font-size: 65px;
     }
     .banner-info h3 {
-        font-size: 3em;
+        font-size: 2.5em;
     }
     .footer_grid_bottom.contact ul li span {
         width: 58px;

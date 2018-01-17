@@ -1,6 +1,6 @@
 <template>
   <div class="about-grid">
-		<div class="col-md-12 about-sub-grid">
+		<div class="col-md-12 about-sub-grid" >
 			<div class="col-md-6 about-right about-right-flex">
 				<div class="about-bottom-text">
 					<h4 class="title1">{{samish.address}}
@@ -26,7 +26,7 @@
             <div class="col-md-6 about-right about-right-flex">
 				<div class="about-bottom-text">
 					<h4 class="title1">
-                        {{harris.address}}<br>{{harris.city}}, {{harris.state}}, {{harris.state}}
+                        {{harris.address}}<br>{{harris.city}}, {{harris.state}}, {{harris.zip}}
                         <br><br>{{harris.number}}</h4>
 				</div>
 				<div class="about-bottom-grid">

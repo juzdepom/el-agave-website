@@ -1,36 +1,11 @@
 <template>
   <div id="app">
-    <div class="agile-banner-main" id="home">
-		<div class="banner-layer">
-			<div class="header-main">
-				 <div class="container">
-					<navbar-component :navItems="navItems"></navbar-component>
-				</div>
-			</div>
-
-			<div class="container">
-				<div class="banner-top">
-					<div class="banner-info">
-						<h1>
-							<a href="index.html">
-								El Agave Restaurant</a>
-						</h1>
-						<h3>Fresh, authentic Mexican food in a comfortable family environment at an affordable price. </h3>
-
-						<div class="about-p text-center">
-							<span class="sub-title"></span>
-							<span class="fa fa-cutlery" aria-hidden="true" style="color:#F7EE24"></span>
-							<span class="sub-title"></span>
-						</div>
-						<p><i>Family Owned</i></p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	<locations-component></locations-component>
-	<testimonials-component></testimonials-component>
+		<navbar-component :navItems="navItems"></navbar-component>
+		<banner-text-component></banner-text-component>
+		<menu-component></menu-component>
+		<about-component></about-component>
+		<locations-component></locations-component>
+		<testimonials-component></testimonials-component>
 
 
   </div>
@@ -38,8 +13,11 @@
 
 <script>
 import Navbar from './components/Navbar/Navbar.vue'
+import BannerText from './components/BannerText.vue'
 import Testimonials from './components/Testimonials.vue'
 import Locations from './components/Locations/Locations.vue'
+import Menu from './components/Menu/Menu.vue'
+import About from './components/About.vue'
 
 export default {
   name: 'app',
@@ -47,6 +25,9 @@ export default {
     NavbarComponent: Navbar,
 		TestimonialsComponent: Testimonials,
 		LocationsComponent: Locations,
+		MenuComponent: Menu,
+		AboutComponent: About,
+		BannerTextComponent: BannerText,
   },
   data () {
     return {
@@ -57,7 +38,7 @@ export default {
           // {link: `#team`, title: 'Team'},
           // {link: `#testimonials`, title: 'Testimonials'},
           {link:  `#locations`, title: "Locations"},
-          {link: `#contact`, title: 'Contact'},
+          // {link: `#contact`, title: 'Contact'},
 
       ]
     }
