@@ -891,13 +891,7 @@ background: #428bca;
 .menu-info {
     margin-top: 25px;
 }
-.main-menu-bg {
-    border-radius: 10px;
-    /* border: 4px dotted yellow; */
-    background: #D0D7EC;
-    /* opacity: 0.8; */
-    padding: 1em 3em 3em;
-}
+
 /*-- //main-menu --*/
 
 /*-- testimonials--*/
@@ -1334,7 +1328,7 @@ ul.w3_address li p {
 /*-- //slid --*/
 /*-- move top--*/
 
-#toTop {
+/* #toTop {
     display: none;
     text-decoration: none;
     position: fixed;
@@ -1347,9 +1341,9 @@ ul.w3_address li p {
     border: none;
     text-indent: 100%;
     background: url(../images/totop.png) no-repeat 0px 0px;
-  }
+  } */
 
-  #toTopHover {
+  /* #toTopHover {
     width: 32px;
     height: 32px;
     display: block;
@@ -1358,7 +1352,7 @@ ul.w3_address li p {
     opacity: 0;
     -moz-opacity: 0;
     filter: alpha(opacity=0);
-  }
+  } */
 
 /*-- move top--*/
   /* -- Responsive code -- */

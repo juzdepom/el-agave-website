@@ -48,10 +48,13 @@
 					</div>
 				</div>
 				<div style="display: flex; justify-content: center; text-align: center; margin-top: 40px" >
-				<button style="position: relative;  margin: 0 auto" class="btn btn-success ">
+				<a
+					href="../../src/assets/el-agave-menu.pdf"
+					style="position: relative; margin: 0 auto"
+					class="btn btn-success ">
                     <span class="fa fa-cloud-download" aria-hidden="true"></span>
                     &nbsp;&nbsp;Download Menu PDF
-                </button>
+                </a>
 				</div>
 			</div>
 			<slot name="bottomImages"></slot>
@@ -72,6 +75,13 @@
     background-size:cover;
 	min-height:564px;
 }
+.main-menu-bg {
+    border-radius: 10px;
+    /* border: 4px dotted yellow; */
+    background: url(../../images/parchment.jpg);
+    /* opacity: 0.8; */
+    padding: 1em 3em 3em;
+}
 </style>
 
 
@@ -79,6 +89,7 @@
 export default {
 	data(){
 		return {
+			// downloadUrl: require('../../assets/el-agave-menu.pdf'),
 			mainMenu: [
 				{
 					category: "Appetizers",

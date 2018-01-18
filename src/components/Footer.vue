@@ -21,7 +21,7 @@ export default {
         color: white
     }
     .footer-container {
-        height: 120px;
+        height: 170px;
         background-color: rgb(97, 16, 19);
     }
     .footer-card {
