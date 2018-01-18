@@ -1,6 +1,5 @@
 <template>
     <div class="map">
-
         <iframe :src="url" style="border:0" allowfullscreen></iframe>
     </div>
 </template>
@@ -8,7 +7,6 @@
 <script>
 export default {
     props: ['location'],
-
     computed: {
         url(){
             var url = `https://www.google.com/maps?q=`

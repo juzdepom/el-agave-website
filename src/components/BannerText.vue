@@ -1,5 +1,5 @@
 <template>
-    <div class="agile-banner-main" id="home">
+    <div class="agile-banner-main" id="home" style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
         <div class="banner-layer">
             <div class="container">
 				<div class="banner-top">

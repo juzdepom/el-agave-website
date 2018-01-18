@@ -1,7 +1,8 @@
 <template>
-    <div class="section main-menu" id="menu">
+    <div class="section main-menu" id="menu" style="padding-top:10px">
 		<div class="container">
-			<div class="main-menu-bg">
+			<slot name="topImages"></slot>
+			<div class="main-menu-bg" style="margin-top: 10px">
 				<h3 class="w3layouts-title text-center">our menu</h3>
 				<div class="menu-info">
 					<!-- Nav tabs -->
@@ -31,7 +32,7 @@
 						:class="{active: (index==0)}"
 						role="tabpanel"
 						class="tab-pane">
-						<div v-for="(item, index) in m.menu" :key="index" class="col-lg-3 agileinfo-tab-content1">
+						<div v-for="(item, index) in m.menu" :key="index" class="col-lg-3 col-md-6 agileinfo-tab-content1">
 							<div class="menu-text-right1">
 								<div class="menu-title">
 									<h4>{{item.title}}</h4>
@@ -46,7 +47,14 @@
 						<div class="clearfix"></div>
 					</div>
 				</div>
+				<div style="display: flex; justify-content: center; text-align: center; margin-top: 40px" >
+				<button style="position: relative;  margin: 0 auto" class="btn ">
+                    <span class="fa fa-cloud-download" aria-hidden="true"></span>
+                    &nbsp;&nbsp;Download PDF
+                </button>
+				</div>
 			</div>
+			<slot name="bottomImages"></slot>
         </div>
 	</div>
 </template>
