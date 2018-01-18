@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-6 about-right about-right-flex" style="background-color: transparent">
+    <div class="col-md-12 about-right about-right-flex" style="background-color: transparent">
         <div class="about-bottom-grid">
             <map-component :location="entry"></map-component>
         </div>

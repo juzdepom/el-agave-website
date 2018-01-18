@@ -1,7 +1,11 @@
 <template>
     <div class="container-fluid">
-        <div style="display: flex; flex-direction: row;  justify-content: center; overflow: scroll; direction: rtl; white-space: nowrap;">
-                <a><img class="shadow-down" v-for="(url,i) in paths" :key="i" :src="url" style="margin: 20px; max-height: 175px; border-radius: 10px; "/></a>
+        <div style="display: flex; justify-content: center;" >
+                <img
+                    class="shadow-down"
+                    v-for="(url,i) in paths"
+                    :key="i" :src="url"
+                    style="margin: 20px; max-height: 175px; border-radius: 10px; "/>
         </div>
     </div>
 </template>
@@ -22,4 +26,12 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .image-row div {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
 

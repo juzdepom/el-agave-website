@@ -1,20 +1,21 @@
 <template>
   <div id="app">
 		<navbar-component :navItems="navItems"></navbar-component>
-		<banner-text-component></banner-text-component>
+		<banner-component></banner-component>
 
 		<menu-component>
       <images-component slot="topImages" :imagePaths="dishImagesMenuTop"></images-component>
       <images-component slot="bottomImages" :imagePaths="dishImagesMenuBottom"></images-component>
     </menu-component>
     <!-- <images-component :imagePaths="dishImagesMenuBottom"></images-component> -->
-		<about-component :title="about.title" :description="about.description" :imagePath="about.imagePath" :pullRight="about.pullRight"></about-component>
+		<about-component id="about" :title="about.title" :description="about.description" :imagePath="about.imagePath" :pullRight="about.pullRight"></about-component>
 		<locations-component></locations-component>
     <about-component :title="student.title" :description="student.description" :imagePath="student.imagePath" :pullRight="student.pullRight"></about-component>
 		<testimonials-component></testimonials-component>
 
     <coupons-component imagePath="coupons.jpg">
-      <images-component :imagePaths="dishImagesCoupons"></images-component>
+      <images-component slot="imageTop" :imagePaths="dishImagesCouponsTop"></images-component>
+      <images-component slot="imageBottom" :imagePaths="dishImagesCouponsBottom"></images-component>
     </coupons-component>
 
     <footer-component>
@@ -28,8 +29,8 @@
 
 <script>
 import Navbar from './components/Navbar/Navbar.vue'
-import BannerText from './components/BannerText.vue'
-import Testimonials from './components/Testimonials.vue'
+import Banner from './components/Banner.vue'
+import Testimonials from './components/Testimonials/Testimonials.vue'
 import Locations from './components/Locations/Locations.vue'
 import Menu from './components/Menu/Menu.vue'
 import About from './components/About.vue'
@@ -45,20 +46,19 @@ export default {
 		LocationsComponent: Locations,
 		MenuComponent: Menu,
 		AboutComponent: About,
-		BannerTextComponent: BannerText,
+		BannerComponent: Banner,
     CouponsComponent: Coupons,
     ImagesComponent: Images,
     FooterComponent: Footer,
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
       navItems: [
           // {link: `#about`, title: 'About'},
           {link: `#menu`, title: 'Menu'},
-          // {link: `#team`, title: 'Team'},
-          // {link: `#testimonials`, title: 'Testimonials'},
+          {link: `#about`, title: 'About'},
           {link:  `#locations`, title: "Locations"},
+          {link: `#testimonials`, title: 'Fan Mail'},
           // {link: `#contact`, title: 'Contact'},
 
       ],
@@ -76,7 +76,8 @@ export default {
       },
       dishImagesMenuTop: ['plate1.jpg', 'plate2.jpg', 'plate3.jpg', 'plate4.jpg'],
       dishImagesMenuBottom: ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
-      dishImagesCoupons: ['dish1.jpg', 'dish2.jpg', 'dish3.jpg', 'dish4.jpg']
+      dishImagesCouponsTop: ['dish1.jpg', 'dish2.jpg', 'dish3.jpg', 'dish4.jpg'],
+      dishImagesCouponsBottom: ['5.jpg', '6.jpg', '7.jpg', '8.jpg'],
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="header-main shadow-down">
+    <div id="topOfPage" class="header-main shadow-down">
         <div class="container">
             <nav class="navbar navbar-default navbar-expand-sm">
                 <div class="navbar-header">
@@ -8,8 +8,9 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="index.html"
-                                style="padding-top:5px">
+                            <a href='#'
+                                class="scroll "
+                                style="padding-top:5px; padding-bottom: 15px">
                                 <img
                                     src="../../images/el-agave-logo.png"
                                     height="30px">
@@ -17,16 +18,6 @@
                         </li>
                         <nav-item-component v-for="(item, index) in navItems" :key="index" :link="item.link" :title="item.title"></nav-item-component>
                     </ul>
-                    <!-- <ul class="list-right">
-                        <li>
-                            <span class="fa fa-envelope-o list-icon" aria-hidden="true"></span>
-                            <a href="mailto:info@example.com">info@example.com</a>
-                        </li>
-                        <li>
-                            <span class="fa fa-phone list-icon" aria-hidden="true"></span>
-                            <p> 1234 423 23 </p>
-                        </li>
-                    </ul> -->
                 </div>
                 <div class="clearfix"> </div>
             </nav>

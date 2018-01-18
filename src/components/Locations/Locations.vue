@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <div class="about-grid shadow-down" >
-		<div class="col-md-12 about-sub-grid" >
+    <div id="locations">
+        <div class="about-grid shadow-down" style="display: flex" >
+		<div class=" col-md-12 about-sub-grid" >
             <grid-top-component :entry="samish"></grid-top-component>
             <grid-bottom-component :entry="clubhouse"></grid-bottom-component>
             <grid-top-component :entry="harris"></grid-top-component>

@@ -48,9 +48,9 @@
 					</div>
 				</div>
 				<div style="display: flex; justify-content: center; text-align: center; margin-top: 40px" >
-				<button style="position: relative;  margin: 0 auto" class="btn ">
+				<button style="position: relative;  margin: 0 auto" class="btn btn-success ">
                     <span class="fa fa-cloud-download" aria-hidden="true"></span>
-                    &nbsp;&nbsp;Download PDF
+                    &nbsp;&nbsp;Download Menu PDF
                 </button>
 				</div>
 			</div>
@@ -58,6 +58,22 @@
         </div>
 	</div>
 </template>
+
+<style>
+.main-menu {
+    border-top: 5px solid rgb(88, 16, 18);
+    /* border-bottom: 4px dashed yellow; */
+    /* -webkit-box-shadow: 0px -6px 32px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -6px 32px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px -6px 32px -8px rgba(0,0,0,0.75); */
+    padding: 5em 0 10px;
+    /* background:url(../images/mbg.png) no-repeat center fixed; */
+    background-color: rgb(126, 23, 27);
+    background-size:cover;
+	min-height:564px;
+}
+</style>
+
 
 <script>
 export default {

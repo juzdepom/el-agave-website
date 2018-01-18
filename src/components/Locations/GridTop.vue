@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-6 about-right about-right-flex">
+    <div class="container-fluid col-md-12 about-right about-right-flex">
         <div class="about-bottom-text custom-background" style="" :style="{'background-image':'url(' + background + ')'}">
             <!-- <div style="background-color: rgb(165, 29, 33); height: 100%;"> -->
             <h4 class="title1">{{entry.title}}</h4>

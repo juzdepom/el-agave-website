@@ -1,5 +1,5 @@
 <<template>
-  <div class="slid" :style="{'background-image':'url(' + background + ')'}">
+  <div :id="id" class="slid" :style="{'background-image':'url(' + background + ')'}">
 	  	<!-- <img src="../images/b1.jpg" width= "100%" style="position: absolute; z-index:1;"/> -->
 		<div class="slid-text" :class="{'pull-right': pullRight}">
 			<h4>{{title}}</h4>
@@ -13,7 +13,7 @@
 </template>
 <script>
 export default {
-	props:['imagePath', 'title', 'description', 'pullRight'],
+	props:['imagePath', 'title', 'description', 'pullRight', 'id'],
 	computed: {
 		background(){
 			var path = '../images/' + this.imagePath
