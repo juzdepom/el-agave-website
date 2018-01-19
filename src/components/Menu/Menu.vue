@@ -31,30 +31,33 @@
 						:id="m.category.toLowerCase().replace(/\s/g, '-')"
 						:class="{active: (index==0)}"
 						role="tabpanel"
-						class="tab-pane">
-						<div v-for="(item, index) in m.menu" :key="index" class="col-lg-3 col-md-6 agileinfo-tab-content1">
+						class="tab-pane"
+						style="">
+						<div v-if="m.subtitle" class="menu-title" style="width: 100%"><h4>{{m.subtitle}}</h4><br><br></div>
+						<div style="" v-for="(item, index) in m.menu" :key="index" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 agileinfo-tab-content1">
 							<div class="menu-text-right1">
 								<div class="menu-title">
 									<h4>{{item.title}}</h4>
 								</div>
 								<div class="menu-price">
-									<h4 class="price-clr">{{item.price}}</h4>
+									<h4 class="price-clr">$ {{((item.price + 0.5)% 1 == 0 ) ? item.price + '0' : item.price}}</h4>
 								</div>
 								<div class="clearfix"></div>
-								<p>{{item.redText}}</p>
+								<p style="line-height: 1.1; color: #a51c21">{{item.redText}}</p>
+								<p style="line-height: 1.1;" v-html="item.blackText"></p>
 							</div>
 						</div>
 						<div class="clearfix"></div>
 					</div>
 				</div>
 				<div style="display: flex; justify-content: center; text-align: center; margin-top: 40px" >
-				<a
-					href="../../src/assets/el-agave-menu.pdf"
-					style="position: relative; margin: 0 auto"
-					class="btn btn-success ">
-                    <span class="fa fa-cloud-download" aria-hidden="true"></span>
-                    &nbsp;&nbsp;Download Menu PDF
-                </a>
+					<a
+						href="../../src/assets/el-agave-menu.pdf"
+						style="position: relative; margin: 0 auto"
+						class="btn btn-success ">
+						<span class="fa fa-cloud-download" aria-hidden="true"></span>
+						&nbsp;&nbsp;Download Menu PDF
+					</a>
 				</div>
 			</div>
 			<slot name="bottomImages"></slot>
@@ -62,7 +65,15 @@
 	</div>
 </template>
 
-<style>
+<style scoped>
+.tab-pane.active {
+	display: flex;
+	flex-wrap: wrap;
+}
+.agileinfo-tab-content1 div {
+	flex: 1,
+
+}
 .main-menu {
     border-top: 5px solid rgb(88, 16, 18);
     /* border-bottom: 4px dashed yellow; */
@@ -86,320 +97,22 @@
 
 
 <script>
+import { mainMenu } from './Menu'
+
 export default {
 	data(){
 		return {
+			mainMenu: mainMenu,
 			// downloadUrl: require('../../assets/el-agave-menu.pdf'),
-			mainMenu: [
-				{
-					category: "Appetizers",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						},
-						{
-						title: "Nachos",
-						redText: "",
-						price: "$4.95",
-						blackText: "",
-						},
-						{
-						title: "Nachos",
-						redText: "",
-						price: "$4.95",
-						blackText: "",
-						},
-						{
-						title: "Nachos",
-						redText: "",
-						price: "$4.95",
-						blackText: "",
-						},
-						{
-						title: "Nachos",
-						redText: "",
-						price: "$4.95",
-						blackText: "",
-						},
-						{
-						title: "Nachos",
-						redText: "",
-						price: "$4.95",
-						blackText: "",
-						},
-						{
-						title: "Nachos",
-						redText: "",
-						price: "$4.95",
-						blackText: "",
-						},
-						{
-						title: "Nachos",
-						redText: "",
-						price: "$4.95",
-						blackText: "",
-						},
-						{
-						title: "Nachos",
-						redText: "",
-						price: "$4.95",
-						blackText: "",
-						},
-
-
-
-
-
-
-
-					]
-				},
-				{
-					category: "Side Orders",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						},
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-
-					],
-				},
-				{
-					category: "Drinks",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Kids Menu",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Chicken",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Beef",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Pork",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Egg",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Combinations",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Fajitas",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Burritos",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Enchiladas",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Seafood",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Burgers",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Sandwiches",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Soups",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Salads",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Vegetarian",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "★ Daily Specials",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "★ Lunch Specials",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-
-				{
-					category: "Lunch Express",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-				{
-					category: "Dessert",
-					menu: [
-						{
-						title: "Nachos",
-						redText: "",
-						price: 4.95,
-						blackText: "",
-						}
-					],
-				},
-
-			]
+			// mainMenu:
 		}
-	}
+	},
+	// mixins: ['mixin']
+	// computed: {
+	// 	mainMenu(){
+	// 		return menu
+	// 	}
+	// }
 }
 </script>
 
