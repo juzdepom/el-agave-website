@@ -5,6 +5,7 @@
 			<div class="main-menu-bg" style="margin-top: 10px">
 				<h3 class="w3layouts-title text-center">our menu</h3>
 				<div class="menu-info">
+          <search-bar-component placeholder="Search entire menu..." @input="searchInput()"></search-bar-component>
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist" style="border-radius: 5px">
 
@@ -33,7 +34,10 @@
 						role="tabpanel"
 						class="tab-pane"
 						style="">
-						<div v-if="m.subtitle" class="menu-title" style="width: 100%"><h4>{{m.subtitle}}</h4><br><br></div>
+						<div
+              v-if="m.subtitle"
+              class="menu-title"
+              style="width: 100%; text-align: center; color: #a51c21"><h2>{{m.subtitle}}</h2><br></div>
 						<div style="" v-for="(item, index) in m.menu" :key="index" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 agileinfo-tab-content1">
 							<div class="menu-text-right1">
 								<div class="menu-title">
@@ -65,54 +69,48 @@
 	</div>
 </template>
 
+<script>
+import { mainMenu } from './Menu'
+import Searchbar from './Searchbar.vue'
+
+export default {
+  components: {
+    SearchBarComponent: Searchbar,
+  },
+	data(){
+		return {
+			mainMenu: mainMenu,
+		}
+	},
+  methods: {
+    searchInput(event){
+      console.log(event)
+    }
+  }
+}
+</script>
+
 <style scoped>
+.menu-info {
+    margin-top: 10px;
+}
 .tab-pane.active {
 	display: flex;
 	flex-wrap: wrap;
 }
 .agileinfo-tab-content1 div {
 	flex: 1,
-
 }
 .main-menu {
     border-top: 5px solid rgb(88, 16, 18);
-    /* border-bottom: 4px dashed yellow; */
-    /* -webkit-box-shadow: 0px -6px 32px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px -6px 32px -8px rgba(0,0,0,0.75);
-    box-shadow: 0px -6px 32px -8px rgba(0,0,0,0.75); */
     padding: 5em 0 10px;
-    /* background:url(../images/mbg.png) no-repeat center fixed; */
     background-color: rgb(126, 23, 27);
     background-size:cover;
 	min-height:564px;
 }
 .main-menu-bg {
     border-radius: 10px;
-    /* border: 4px dotted yellow; */
     background: url(../../images/parchment.jpg);
-    /* opacity: 0.8; */
     padding: 1em 3em 3em;
 }
 </style>
-
-
-<script>
-import { mainMenu } from './Menu'
-
-export default {
-	data(){
-		return {
-			mainMenu: mainMenu,
-			// downloadUrl: require('../../assets/el-agave-menu.pdf'),
-			// mainMenu:
-		}
-	},
-	// mixins: ['mixin']
-	// computed: {
-	// 	mainMenu(){
-	// 		return menu
-	// 	}
-	// }
-}
-</script>
-

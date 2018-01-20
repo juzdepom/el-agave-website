@@ -838,7 +838,7 @@ background: #428bca;
 .main-menu .nav-tabs {
     border: none;
     text-align: center;
-    background: #000;
+    background: #a51c21;
     margin-bottom: 2em;
 }
 
@@ -864,14 +864,14 @@ background: #428bca;
 	text-decoration: none;
 }
 .menu-info .nav-tabs li.active,.menu-info .nav-tabs li :hover{
-    background:#fff;
+    background:rgb(126, 23, 27);
 }
 .menu-info .nav-tabs li:hover a{
     background: transparent;
     color: #000;
 }
 .menu-info .nav-tabs li:hover {
-    background: #fff;
+    background: rgb(126, 23, 27);
 }
 .menu-info .nav-tabs li.active a,.menu-info .nav-tabs li a:hover{
     opacity: 1;
@@ -881,16 +881,14 @@ background: #428bca;
 .nav-tabs > li.active > a,.nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     border: none;
 	outline:none;
-	background:#fff;
+	background:rgb(126, 23, 27);
 
 }
 
 .nav-tabs > li > a {
     border-radius: 0;
 }
-.menu-info {
-    margin-top: 25px;
-}
+
 
 /*-- //main-menu --*/
 

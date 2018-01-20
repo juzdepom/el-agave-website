@@ -447,6 +447,16 @@ const mainMenu =
                 blackText: "",
                 },
                 {
+                title: "House Steak",
+                redText: "Skirt steak served with potatoes, avocado and salad.",
+                price: 15.95,
+                },
+                {
+                title: "Top Sirloin Steak",
+                redText: "Charbroiled steak with fries and salad.",
+                price: 14.95,
+                },
+                {
                 title: "Carne Asada",
                 redText: "Our delicious carne asada is cooked to perfection and garnished with grilled green onions and guacamole.",
                 price: 15.95,
@@ -760,11 +770,31 @@ const mainMenu =
                 redText: "Flour tortilla stuffed with crab and baby shrimp mixed with onions and tomatoes, topped in a light cream sauce.",
                 price: 15.95,
                 },
+                {
+                title: "Vegetarian Burrito",
+                redText: "Flour tortilla filled with whole beans and rice, smothered in our special sauce, topped with lettuce, tomatoes, guacamole and sour cream.",
+                price: 9.95,
+                },
+                {
+                title: "Super Burrito",
+                redText: "Flour tortilla filled with sautéed brocooli, cauliflower, grilled tomatoes, onions, bell peppers and mushrooms. Topped with cheese, guacamole, and sour cream. Served with rice and whole beans on the side.",
+                price: 13.50,
+                },
+                {
+                title: "Burrito Relleno",
+                redText: "Flour tortilla filled with a chile relleno, rice and whole beans. Smothered with burrito sauce and cheese. Topped with sour cream and guacamole.",
+                price: 9.95,
+                },
+                {
+                title: "Spinach Burrito",
+                redText: "Wheat tortilla filled with spinach, mushrooms, corn, rice and whole beans. Topped with salsa and grated cheese.",
+                price: 12.95,
+                },
             ],
         },
         {
             category: "Enchiladas",
-            subtitle: "Available gluten free sauches: Green Sauce or Burrito Sauce"
+            subtitle: "Available gluten free sauches: Green Sauce or Burrito Sauce",
             menu: [
                 {
                 title: "Enchiladas Rancheras",
@@ -862,160 +892,489 @@ const mainMenu =
                 price: 15.95,
                 },
                 {
-                title: "",
-                redText: "",
-                price: ,
+                title: "Seafood Chimichanga",
+                redText: "A deep fried tortilla filled with baby shrimp and crab with onions and tomatoes topped with our light creamy sauce, sour cream and avocado slices.",
+                price: 15.96,
                 },
                 {
-                title: "",
-                redText: "",
-                price: ,
+                title: "Parrillada",
+                redText: "Mix of scallops, clams, octopus, shrimp, fish, crab and squid cooked in a garlic sauce. Served with rice, beans and tortillas.",
+                price: 18.50,
                 },
                 {
-                title: "",
-                redText: "",
-                price: ,
+                title: "Tacos de Pescado",
+                redText: "Three soft corn tortillas dipped in a light red sauce, filled with breaded and fried Pollock fillets. Topped with avacado slices and sprinkled with parmesan cheese.",
+                price: 13.95,
                 },
                 {
-                title: "",
-                redText: "",
-                price: ,
+                title: "Fish and Chips",
+                redText: "Battered fish, fried and served with salad, fries and tarter sauce.",
+                price: 13.95,
                 },
                 {
-                title: "",
-                redText: "",
-                price: ,
+                title: "3 Tostadas de Ceviche",
+                redText: "Tiger prawns chopped and submerged in fresh lim juice with tomatoes, onion and cilantro on top of a crisp corn tortilla served with avocado slices.",
+                price: 13.95,
                 },
                 {
-                title: "",
-                redText: "",
-                price: ,
+                title: "Tostada de Ceviche",
+                redText: "Single tostada",
+                price: 4.95,
                 },
                 {
-                title: "",
-                redText: "",
-                price: ,
+                title: "Cocktail de Camaron",
+                redText: "A delicious cold shrimp cocktail served in broth with onions, tomatoes, cilantro and avocado.",
+                price: 13.95,
                 },
                 {
-                title: "",
-                redText: "",
-                price: ,
+                title: "Campechana",
+                redText: "Shrimp and octopus cocktail, mixed with onions, tomatoes, cilantro and avocado in broth.",
+                price: 16.95,
                 },
                 {
-                title: "",
-                redText: "",
-                price: ,
+                title: "Tilapia Frita",
+                redText: "Whole tilapia deep fried served with onions, avocado slices, rice and beans.",
+                price: 14.95,
                 },
                 {
-                title: "",
-                redText: "",
-                price: ,
+                title: "Caldo de Pescado",
+                redText: "Slices of tilapia mixed with brocooli, cauliflower, carrots, onions and peppers in broth",
+                price: 13.50,
                 },
                 {
-                title: "",
-                redText: "",
-                price: ,
+                title: "Caldo de Camarones",
+                redText: "Delicious shrimp mixed with broccoli, cauliflower, carrots, onions and peppers in broth.",
+                price: 14.50,
+                },
+                {
+                title: "Caldo 7 Mares",
+                redText: "Fish, scallops, shrimp, crab, octopus, squid and clams in a delicious red broth.",
+                price: 17.95,
                 },
             ],
         },
         {
             category: "Burgers",
+            subtitle: "Served with fries, topped with lettuce, tomato & mayo",
             menu: [
                 {
-                title: "Nachos",
+                title: "Vaquero Burger",
+                redText: "Grilled onion, Bacon & BBQ sauce.",
+                price: 10.95,
+                },
+                {
+                title: "Bacon Cheeseburger",
                 redText: "",
-                price: 4.95,
-                blackText: "",
-                }
+                price: 10.45,
+                },
+                {
+                title: "Hamburger",
+                redText: "",
+                price: 8.50,
+                },
+                {
+                title: "Cheeseburger",
+                redText: "",
+                price: 9.25,
+                },
+                {
+                title: "Mexi Burger",
+                redText: "Jalapeños, avocado and cheese.",
+                price: 10.95,
+                },
+                {
+                title: "Chicken Burger",
+                redText: "Add cheese $ 0.50",
+                price: 7.95,
+                },
+                {
+                title: "Ranch Chicken Burger",
+                redText: "with bacon, cheese and ranch",
+                price: 10.45,
+                },
+                {
+                title: "Breakfast Burger",
+                redText: "A beef patty with eggs on top.",
+                price: 9.95,
+                },
+                {
+                title: "Mushroom Cheeseburger",
+                redText: "Monterrey Jack cheese and mushrooms",
+                price: 10.45,
+                },
+                {
+                title: "Hawaiian Burger",
+                redText: "Ham and pineapple and a choice of beef patty or chicken.",
+                price: 10.95,
+                },
             ],
         },
         {
             category: "Sandwiches",
             menu: [
                 {
-                title: "Nachos",
-                redText: "",
-                price: 4.95,
-                blackText: "",
-                }
+                title: "BLT",
+                redText: "Bacon, lettuce and tomato.",
+                price: 7.95,
+                },
+                {
+                title: "Patty Melt",
+                redText: "Hamburger patty with grilled onions and chese.",
+                price: 8.95,
+                },
+                {
+                title: "Grilled Ham & Cheese",
+                price: 7.95,
+                },
+                {
+                title: "Club House",
+                redText: "Turkey, bacon, lettuce and tomato.",
+                price: 9.95,
+                },
+                {
+                title: "Philly Cheese Steak",
+                redText: "Prime rib, grilled onions, peppers, mushrooms and cheese.",
+                price: 10.95,
+                },
+                {
+                title: "California Sandwich",
+                redText: "Chicken breast, bacon, tomatoes, onions, avocado, lettuce, chese and chipotle sauce.",
+                price: 10.95,
+                },
+                {
+                title: "Grilled Cheese",
+                price: 5.95,
+                },
             ],
         },
         {
             category: "Soups",
             menu: [
-                {
-                title: "Nachos",
-                redText: "",
-                price: 4.95,
-                blackText: "",
-                }
+              {
+              title: "Tortilla Soup",
+              redText: "Tortilla chips with chciken, avocado and Monterrey Jack cheese in a special broth.",
+              price: 9.50,
+              },
+              {
+              title: "Black Bean Soup",
+              redText: "Whole black beans served in their own broth. Topped with tomatoes, onions and Mexican cheese.",
+              price: 6.95,
+              blackText: "Cup <strong>$6.95</strong>",
+              },
+              {
+              title: "Menudo",
+              redText: "Beef tripe cooked in a red broth.",
+              price: 11.95,
+              },
+              {
+              title: "Caldo de Pollo",
+              redText: "A delicious chicken broth with shredded chicken, rice, and vegetables. Served with onions, cilantro and lime.",
+              price: 3.95,
+              blackText: "Cup </strong>$3.95</strong>",
+              },
+              {
+              title: "Caldo de Pescado",
+              redText: "Slices of tilapia mixed with brocooli, cauliflower, carrots, onions and peppers in broth",
+              price: 13.50,
+              },
+              {
+              title: "Caldo de Camarones",
+              redText: "Delicious shrimp mixed with broccoli, cauliflower, carrots, onions and peppers in broth.",
+              price: 14.50,
+              },
+              {
+              title: "Caldo 7 Mares",
+              redText: "Fish, scallops, shrimp, crab, octopus, squid and clams in a delicious red broth.",
+              price: 17.95,
+              },
             ],
         },
         {
             category: "Salads",
             menu: [
                 {
-                title: "Nachos",
-                redText: "",
-                price: 4.95,
-                blackText: "",
-                }
+                title: "Dinner Salad",
+                redText: "Shredded lettuce tomato, green onions and cheese.",
+                price: 3.75,
+                },
+                {
+                title: "Chicken Salad",
+                redText: "Grilled chicken on a bed of shr",
+                price: 9.95,
+                },
+                {
+                title: "Black Bean Salad",
+                redText: "Romaine, corn, tomatoes, black beans, crispy corn, tortilla strips and chicken breast with Ranch dressing on the side.",
+                price: 10.95,
+                },
+                {
+                title: "Caesar Salad",
+                redText: "Romaine lettuce tossed with croutons, parmesan, cheese and Caesar dressing.",
+                price: 6.50,
+                blackText: "with chicken <strong>$9.96</strong>"
+                },
+                {
+                title: "Taco Salad",
+                redText: "Shredded lettuce, tomatoes, green onions, cheese, your choice of meat, topped with sour cream and guacamole.",
+                price: 7.75,
+                blackText: "with Asada <strong>$10.50</strong>"
+                },
+                {
+                title: "Tostada",
+                redText: "Served with guacamole and sour cream.",
+                price: 7.75,
+                },
+                {
+                title: "Chalupa",
+                redText: "Deep fried flour shell stuff with meat, lettuce, tomatoes and cheese.",
+                price: 6.50,
+                },
+                {
+                title: "Totopo Salad",
+                redText: "Two crisp corn tortillas layered with refried beans, topped with lettuce, shredded",
+                price: 8.50,
+                },
+                {
+                title: "Fajita Salad",
+                redText: "Marinated strips of chicken or steak, sautéed with peppers, onions and mushrooms.",
+                price: 10.50,
+                },
             ],
         },
         {
             category: "Vegetarian",
             menu: [
                 {
-                title: "Nachos",
-                redText: "",
-                price: 4.95,
-                blackText: "",
-                }
+                title: "Arroz con Vegetales",
+                redText: "Sautéed broccoli, cauliflower, bell peppers, mushrooms and tomatoes, on a bed of rice and cheese with our special sauce, served with salad (not served with beans)",
+                price: 12.95,
+                },
+                {
+                title: "Vegetarian Burrito",
+                redText: "Flour tortilla filled with whole beans and rice, smothered in our special sauce, topped with lettuce, tomatoes, guacamole and sour cream.",
+                price: 9.95,
+                },
+                {
+                title: "Super Burrito",
+                redText: "Flour tortilla filled with sautéed brocooli, cauliflower, grilled tomatoes, onions, bell peppers and mushrooms. Topped with cheese, guacamole, and sour cream. Served with rice and whole beans on the side.",
+                price: 13.50,
+                },
+                {
+                title: "Spinach Burrito",
+                redText: "Wheat tortilla filled with spinach, mushrooms, corn, rice and whole beans. Topped with salsa and grated cheese.",
+                price: 12.95,
+                },
+                {
+                title: "Vegetarian Fajitas",
+                redText: "Grilled broccoli, cauliflower, onion, bell peppers, mushrooms and tomatoes.",
+                price: 12.95,
+                },
+                {
+                title: "Burrito Relleno",
+                redText: "Flour tortilla filled with a chile relleno, rice and whole beans. Smothered with burrito sauce and cheese. Topped with sour cream and guacamole.",
+                price: 9.95,
+                },
+                {
+                title: "Spinach Enchiladas",
+                redText: "Three corn tortillas, filled with sautéed spinach, tomatoes, onions ad corn topped with green salsa and cheese.",
+                price: 12.50,
+                },
+                {
+                title: "Spinach Tamal",
+                redText: "Corn meal spread on a corn husk filled with Monterrey Jack cheese and spinach. Served with rice, whole beans and salad.",
+                price: 7.95,
+                },
+                {
+                title: "Spinach Quesadilla",
+                redText: "Flour tortilla filled with cheese, sautéd spinach, tomatoes, onions, and corn. Served with black beans, lettuce, sour cream and guacamole.",
+                price: 12.95,
+                },
+                {
+                title: "Veggie Taco Salad",
+                redText: "Crispy tortilla shell, filled with rice, beans, lettuce, tomatoes, guacamole and sour cream.",
+                price: 6.95,
+                },
             ],
         },
         {
             category: "★ Daily Specials",
             menu: [
                 {
-                title: "Nachos",
-                redText: "",
-                price: 4.95,
-                blackText: "",
-                }
+                title: "Monday: Arroz con Pollo",
+                price: 14.95,
+                },
+                {
+                title: "Tuesday: Carne Asada",
+                price: 14.95,
+                },
+                {
+                title: "Wednesday: Pollo en Mole",
+                price: 13.95,
+                },
+                {
+                title: "Thursday: Carnitas de Pollo",
+                price: 13.95,
+                },
+                {
+                title: "Friday: Chile Verde",
+                price: 14.95,
+                },
+                {
+                title: "Saturday: Chile Colorado",
+                price: 14.95,
+                },
+                {
+                title: "Sunday: Fajitas",
+                redText: "Steak or chicken",
+                price: 14.95,
+                },
             ],
         },
         {
             category: "★ Lunch Specials",
+            subtitles: "Monday through Friday – 11 AM to 3PM. Your choice of chicken, shredded beef, or ground beef, served with rice and beans.",
             menu: [
                 {
-                title: "Nachos",
-                redText: "",
-                price: 4.95,
-                blackText: "",
-                }
-            ],
+                title: "Two Tacos",
+                price: 6.95,
+                },
+                {
+                title: "Two Enchiladas",
+                price: 6.95,
+                },
+                {
+                title: "Enchilada & Taco",
+                price: 6.95,
+                },
+                {
+                title: "Enchilada & Tostada",
+                price: 6.95,
+                },
+                {
+                title: "Enchilada & Tamal",
+                price: 6.95,
+                },
+                {
+                title: "Enchilada & Chile Relleno",
+                price: 6.95,
+                },
+                {
+                title: "Taco & Tostada",
+                price: 6.95,
+                },
+                {
+                title: "Chalupa",
+                price: 6.95,
+                },
+                {
+                title: "Burrito",
+                price: 6.95,
+                },
+                {
+                title: "Chimichanga",
+                price: 6.95,
+                },
+                {
+                title: "Two Chile Rellenos",
+                price: 7.95,
+                },
+                {
+                title: "Carne Asada",
+                price: 9.95,
+                },
+                {
+                title: "Arroz con Pollo",
+                price: 9.95,
+                },
+                {
+                title: "Burrito Asado",
+                price: 9.95,
+                },
+                {
+                title: "Carnitas de Pollo",
+                price: 9.95,
+                },
+                {
+                title: "Carnitas de Res",
+                price: 9.95,
+                },
+                {
+                title: "Pollo en Mole",
+                price: 9.95,
+                },
+                {
+                title: "Fajita Burrito",
+                price: 9.95,
+                },
+                {
+                title: "Fajitas",
+                price: 9.95,
+                },
+                {
+                title: "Pollo a la Diabla",
+                price: 9.95,
+                },
+                {
+                title: "Pollo al Diabla",
+                price: 9.95,
+                },
+                {
+                title: "Chile Colorado",
+                price: 9.95,
+                },
+                {
+                title: "Pollo a la Crema",
+                price: 10.50,
+                },
+            ],subtitles: "Monday through Friday – 11 AM to 3PM. Your choice of chicken, shredded beef, or ground beef, served with rice and beans.",
         },
 
         {
             category: "Lunch Express",
             menu: [
                 {
-                title: "Nachos",
-                redText: "",
-                price: 4.95,
-                blackText: "",
-                }
+                title: "Taco Salad (with meat)",
+                price: 6.75,
+                },
+                {
+                title: "Vegetarian Burrito",
+                price: 6.95,
+                },
+                {
+                title: "Veggie Taco Salad",
+                price: 6.50,
+                },
+                {
+                title: "Chalupa Salad",
+                price: 6.50,
+                },
+                {
+                title: "Deluxe Tostada",
+                price: 6.50,
+                },
+                {
+                title: "Lunch Rapido",
+                redText: "Choice of enchilada, chile relleno, taco or tamal. Served with rice and salad.",
+                price: 6.50,
+                },
             ],
         },
         {
             category: "Dessert",
             menu: [
                 {
-                title: "Nachos",
-                redText: "",
+                title: "Churros",
                 price: 4.95,
-                blackText: "",
-                }
+                },
+                {
+                title: "Flan",
+                price: 4.95,
+                },
+                {
+                title: "Nieve",
+                redText: "Fried ice cream",
+                price: 5.45,
+                },
             ],
         },
     ]
