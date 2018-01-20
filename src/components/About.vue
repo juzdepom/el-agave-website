@@ -1,7 +1,8 @@
 <template>
-  	<div :id="id" class="slid" :style="{'background-image':'url(' + background + ')'}">
-		<div class="slid-text" :class="{'pull-right': pullRight}">
-			<h4>{{title}}</h4>
+  	<div class="slid" :style="{'background-image':'url(' + background + ')'}" >
+		<div class="slid-text" :class="{'pull-right': pullRight}" style="padding-top: 30px">
+			<h4 :id="id">{{title}}</h4>
+			<!-- slot -->
 			<slot name="images"></slot>
 			<p v-for="(paragraph, i) in text" :key="i">
 				{{paragraph}}
@@ -9,6 +10,7 @@
 			</p>
 		</div>
 		<div class="clearfix"> </div>
+		<!-- slot -->
 		<slot name="addOn"></slot>
 	</div>
 </template>

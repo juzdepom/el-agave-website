@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-12 about-right about-right-flex" style="background-color: transparent">
+    <div class="about-right about-right-flex" style="background-color: transparent">
         <div class="about-bottom-grid">
             <map-component :location="entry"></map-component>
         </div>
@@ -34,10 +34,7 @@ export default {
 </script>
 
 <style>
-.about-bottom-text.ab1 {
-    /* background-color: #0e7758; */
-    /* color: #fff; */
-}
+
 .about-bottom-text.ab1:before {
     transform: rotate(180deg);
     -webkit-transform:rotate(180deg);

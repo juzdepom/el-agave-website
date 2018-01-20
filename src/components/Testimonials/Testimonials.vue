@@ -5,7 +5,7 @@
 		<div class="container">
 			<h3 class="w3layouts-title text-center"
 				style="color: white">
-				Fan Mail
+				Yelp Reviews
 			</h3>
 			<carousel-component></carousel-component>
 		</div>

@@ -1,11 +1,24 @@
 <template>
-    <div class="section main-menu" id="menu" style="padding-top:10px">
+    <div class="section main-menu" style="padding-top:10px">
 		<div class="container">
+			<!-- open hours -->
+			<card-component id="hours">
+				<h3 class="w3layouts-title text-center">Open Hours</h3><br>
+
+				<h2 class="text-center">
+					Sun, Mon, Tues, Wed, Thur:
+					<span class="fa fa-sun-o" aria-hidden="true"></span>
+					11am to 10pm <span class="fa fa-moon-o" aria-hidden="true"></span> <br>
+					Fri, Sat:
+					<span class="fa fa-sun-o" aria-hidden="true"></span>
+					11am to 11pm  <span class="fa fa-moon-o" aria-hidden="true"></span></h2>
+			</card-component>
+			<!-- images -->
 			<slot name="topImages"></slot>
-			<div class="main-menu-bg" style="margin-top: 10px">
+			<div id="menu" class="main-menu-bg" style="margin-top: 10px">
 				<h3 class="w3layouts-title text-center">our menu</h3>
 				<div class="menu-info">
-          <search-bar-component placeholder="Search entire menu..." v-model="searchText"></search-bar-component>
+        			<search-bar-component placeholder="Search entire menu..." v-model="searchText"></search-bar-component>
 					<!-- Nav tabs -->
 					<ul v-if="searchText.length < 1" class="nav nav-tabs" role="tablist" style="border-radius: 5px">
 
@@ -35,22 +48,24 @@
 						role="tabpanel"
 						class="tab-pane">
 						<div
-              v-if="m.subtitle"
-              class="menu-title"
-              style="width: 100%; text-align: center; color: #a51c21"><h2>{{m.subtitle}}</h2><br></div>
-						<div style="" v-for="(item, index) in m.menu" :key="index" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 agileinfo-tab-content1">
-							<div class="menu-text-right1">
-								<div class="menu-title">
-									<h4>{{item.title}}</h4>
-								</div>
-								<div class="menu-price">
-									<h4 class="price-clr">$ {{((item.price + 0.5)% 1 == 0 ) ? item.price + '0' : item.price}}</h4>
-								</div>
-								<div class="clearfix"></div>
-								<p style="line-height: 1.1; color: #a51c21">{{item.redText}}</p>
-								<p style="line-height: 1.1;" v-html="item.blackText"></p>
-							</div>
+							v-if="m.subtitle"
+							class="menu-title"
+							style="width: 100%; text-align: center; color: #a51c21">
+							<h2>{{m.subtitle}}</h2><br>
 						</div>
+							<div style="" v-for="(item, index) in m.menu" :key="index" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 agileinfo-tab-content1">
+								<div class="menu-text-right1">
+									<div class="menu-title">
+										<h4>{{item.title}}</h4>
+									</div>
+									<div class="menu-price">
+										<h4 class="price-clr">$ {{((item.price + 0.5)% 1 == 0 ) ? item.price + '0' : item.price}}</h4>
+									</div>
+									<div class="clearfix"></div>
+									<p style="line-height: 1.1; color: #a51c21">{{item.redText}}</p>
+									<p style="line-height: 1.1;" v-html="item.blackText"></p>
+								</div>
+							</div>
 						<div class="clearfix"></div>
 					</div>
 					<!-- Filtered menu -->
@@ -88,11 +103,13 @@
 
 <script>
 import { mainMenu } from './Menu'
+import Card from './Card.vue'
 import Searchbar from './Searchbar.vue'
 
 export default {
   components: {
-    SearchBarComponent: Searchbar,
+	SearchBarComponent: Searchbar,
+	CardComponent: Card,
   },
 	data(){
 		return {

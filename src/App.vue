@@ -14,20 +14,30 @@
       :description="about.description"
       :imagePath="about.imagePath"
       :pullRight="about.pullRight">
-      <div slot="images" style="display: flex;">
-        <img src="./images/cruz.jpg"
-          class="shadow-down"
-          style="height:150px; border-radius: 10px 0 0 10px"/>
-        <img src="./images/family.jpg"
-          class="shadow-down"
-          style="height:150px;margin-bottom: 35px; border-radius: 0 10px 10px 0"/>
+      <!-- family photos -->
+      <div slot="images" class="row">
+        <div class="col-sm-6">
+          <img src="./images/cruz.jpg"
+            class="shadow-down"
+            style="border-radius: 10px; height: 150px; margin-bottom:30px"/>
+        </div>
+        <div class="col-sm-6">
+          <img src="./images/family.jpg"
+            class="shadow-down"
+            style="border-radius: 10px; height: 150px; margin-bottom:30px"/>
+        </div>
+
+        <!-- <img src="./images/family.jpg"
+          class="shadow-down col-md-12"
+          style="height: 150px; border-radius: 10px"/> -->
       </div>
-      <div slot="addOn" class="pull-right row">
+      <!-- taco truck -->
+      <div slot="addOn" class="pull-right row hidden-xs">
         <img
           src="./images/taco-truck.png"
           class="pull-right"
           style="margin: 0 30px 20px 20px; height: 150px; display: table-cell; vertical-align: bottom;"/>
-        <h4 class="pull-right" style="margin: 60px 0 0 50px ; ">
+        <h4 class="pull-right text-outline" style="margin: 60px 0 0 50px ; ">
         We also have a Taco Truck!<br><h5 class="pull-left" style="font-size: 25px">700 Ohio Street, Bellingham, WA</h5>
         </h4>
       </div>
@@ -53,6 +63,17 @@
 
   </div>
 </template>
+
+<style>
+  .text-outline {
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  }
+</style>
+
 
 <script>
 import Navbar from './components/Navbar/Navbar.vue'
@@ -84,7 +105,7 @@ export default {
           // {link: `#about`, title: 'About'},
           {link: `#menu`, title: 'Menu'},
           {link: `#about`, title: 'About'},
-          {link:  `#locations`, title: "Locations"},
+          {link: `#locations`, title: "Locations"},
           {link: `#testimonials`, title: 'Fan Mail'},
           {link: `#coupons`, title: 'Deals'},
 
@@ -108,6 +129,19 @@ export default {
     }
   }
 }
+
+$(document).ready(function () {
+    $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+
+        var target = this.hash,
+            $target = $(target);
+
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top - 80
+        });
+    });
+  });
 
 </script>
 

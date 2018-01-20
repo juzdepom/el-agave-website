@@ -1,10 +1,11 @@
 <template>
     <div id="locations">
         <div class="about-grid shadow-down" style="display: flex" >
-		<div class=" col-md-12 about-sub-grid" >
-            <grid-top-component :entry="samish"></grid-top-component>
-            <grid-bottom-component :entry="clubhouse"></grid-bottom-component>
-            <grid-top-component :entry="harris"></grid-top-component>
+		<div class="row" style="width: 100%;" >
+            <grid-top-component class="col-sm-4 col-12" :entry="samish"></grid-top-component>
+            <grid-top-component class="col-sm-4 col-12" :entry="clubhouse"></grid-top-component>
+            <!-- <grid-bottom-component class="col-sm-4 col-12" :entry="clubhouse"></grid-bottom-component> -->
+            <grid-top-component class="col-sm-4 col-12" :entry="harris"></grid-top-component>
 			<div class="clearfix"></div>
 		</div>
 	</div>
