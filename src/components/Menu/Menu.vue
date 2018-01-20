@@ -5,7 +5,7 @@
 			<div class="main-menu-bg" style="margin-top: 10px">
 				<h3 class="w3layouts-title text-center">our menu</h3>
 				<div class="menu-info">
-          <search-bar-component placeholder="Search entire menu..." @input="searchInput()"></search-bar-component>
+          <search-bar-component placeholder="Search entire menu..." v-model="searchText"></search-bar-component>
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist" style="border-radius: 5px">
 
@@ -80,6 +80,7 @@ export default {
 	data(){
 		return {
 			mainMenu: mainMenu,
+			searchText: "",
 		}
 	},
   methods: {

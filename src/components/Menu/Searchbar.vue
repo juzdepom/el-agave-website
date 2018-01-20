@@ -2,7 +2,7 @@
   <div>
   	<div style="display: flex; width: 50%; justify-content: center; margin: 0 auto 10px auto;">
         <div class="input-group stylish-input-group">
-            <input type="text" class="form-control" :placeholder="placeholder" :value="inputText">
+            <input type="text" class="form-control" :placeholder="placeholder" v-model="searchText">
             <span class="input-group-addon">
                 <button type="submit">
                     <span class="fa fa-search"></span>
@@ -15,16 +15,21 @@
 
 <script>
 export default {
-  props: ['placeholder'],
+  props: ['placeholder', 'value'],
   data(){
     return {
-      inputText: "",
+      searchText: this.value,
     }
   },
+  // methods: {
+  //   update(event){
+  //     this.$emit('updateInput', event.target.value)
+  //   }
+  // },
   watch: {
-    inputText: function (val) {
-      this.$emit('input', val)
-    },
+    searchText(){
+      this.$emit('input', this.searchText)
+    }
   }
 }
 </script>
