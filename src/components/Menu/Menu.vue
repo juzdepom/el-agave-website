@@ -38,39 +38,43 @@
 					</ul>
 				</div>
 				<!-- Tab panes -->
-				<div class="tab-content">
-					<!-- Main menu -->
-					<div v-if="searchText.length < 1"
-						v-for="(m, index) in mainMenu"
-						:key="index"
-						:id="m.category.toLowerCase().replace(/\s/g, '-')"
-						:class="{active: (index==0)}"
-						role="tabpanel"
-						class="tab-pane">
-						<div
-							v-if="m.subtitle"
-							class="menu-title"
-							style="width: 100%; text-align: center; color: #a51c21">
-							<h2>{{m.subtitle}}</h2><br>
-						</div>
-							<div style="" v-for="(item, index) in m.menu" :key="index" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 agileinfo-tab-content1">
-								<div class="menu-text-right1">
-									<div class="menu-title">
-										<h4>{{item.title}}</h4>
-									</div>
-									<div class="menu-price">
-										<h4 class="price-clr">$ {{((item.price + 0.5)% 1 == 0 ) ? item.price + '0' : item.price}}</h4>
-									</div>
-									<div class="clearfix"></div>
-									<p style="line-height: 1.1; color: #a51c21">{{item.redText}}</p>
-									<p style="line-height: 1.1;" v-html="item.blackText"></p>
-								</div>
+					<div class="tab-content">
+						<!-- Main menu -->
+						<div v-if="searchText.length < 1"
+							v-for="(m, index) in mainMenu"
+							:key="index"
+							:id="m.category.toLowerCase().replace(/\s/g, '-')"
+							:class="{active: (index==0)}"
+							role="tabpanel"
+							class="tab-pane">
+							<div
+								v-if="m.subtitle"
+								class="menu-title"
+								style="width: 100%; text-align: center; color: #a51c21">
+								<h2>{{m.subtitle}}</h2><br>
 							</div>
-						<div class="clearfix"></div>
+								<div style="" v-for="(item, index) in m.menu" :key="index" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 agileinfo-tab-content1">
+									<div class="menu-text-right1">
+										<div class="menu-title">
+											<h4>{{item.title}}</h4>
+										</div>
+										<div class="menu-price">
+											<h4 class="price-clr">$ {{((item.price + 0.5)% 1 == 0 ) ? item.price + '0' : item.price}}</h4>
+										</div>
+										<div class="clearfix"></div>
+										<p style="line-height: 1.1; color: #a51c21">{{item.redText}}</p>
+										<p style="line-height: 1.1;" v-html="item.blackText"></p>
+									</div>
+								</div>
+							<div class="clearfix"></div>
+						</div>
+
+
 					</div>
 					<!-- Filtered menu -->
-					<div class="tab-pane active">
-						<div v-if="searchText.length >= 1" v-for="(item, index) in filteredMenu" :key="index" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 agileinfo-tab-content1">
+
+						<div class="tab-pane active">
+							<div v-if="searchText.length >= 1" v-for="(item, index) in filteredMenu" :key="index" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 agileinfo-tab-content1">
 								<div class="menu-text-right1">
 									<div class="menu-title">
 										<h4>{{item.title}}</h4>
@@ -98,7 +102,6 @@
 			</div>
 			<slot name="bottomImages"></slot>
         </div>
-	</div>
 </template>
 
 <script>
@@ -165,4 +168,35 @@ export default {
     background: url(../../images/parchment.jpg);
     padding: 1em 3em 3em;
 }
+.slide-enter {
+    opacity: 0;
+}
+.slide-enter-active {
+animation: slide-in 0.3s ease-out forwards;
+transition: opacity 0.3s;
+}
+.slide-leave {
+}
+.slide-leave-active {
+animation: slide-out 0.3s ease-out forwards;
+transition: opacity 0.3s;
+opacity: 0;
+}
+@keyframes slide-in {
+from {
+	transform: translateY(-20px);
+}
+to {
+	transform: translateY(0);
+}
+}
+@keyframes slide-out {
+from {
+	transform: translateY(0);
+}
+to {
+	transform: translateY(-20px);
+}
+}
+
 </style>
