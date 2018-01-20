@@ -21,11 +21,6 @@ export default {
       searchText: this.value,
     }
   },
-  // methods: {
-  //   update(event){
-  //     this.$emit('updateInput', event.target.value)
-  //   }
-  // },
   watch: {
     searchText(){
       this.$emit('input', this.searchText)

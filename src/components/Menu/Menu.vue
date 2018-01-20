@@ -7,7 +7,7 @@
 				<div class="menu-info">
           <search-bar-component placeholder="Search entire menu..." v-model="searchText"></search-bar-component>
 					<!-- Nav tabs -->
-					<ul class="nav nav-tabs" role="tablist" style="border-radius: 5px">
+					<ul v-if="searchText.length < 1" class="nav nav-tabs" role="tablist" style="border-radius: 5px">
 
 						<li
 							v-for="(m, index) in mainMenu"
@@ -26,14 +26,14 @@
 				</div>
 				<!-- Tab panes -->
 				<div class="tab-content">
-					<div
+					<!-- Main menu -->
+					<div v-if="searchText.length < 1"
 						v-for="(m, index) in mainMenu"
 						:key="index"
 						:id="m.category.toLowerCase().replace(/\s/g, '-')"
 						:class="{active: (index==0)}"
 						role="tabpanel"
-						class="tab-pane"
-						style="">
+						class="tab-pane">
 						<div
               v-if="m.subtitle"
               class="menu-title"
@@ -53,7 +53,24 @@
 						</div>
 						<div class="clearfix"></div>
 					</div>
+					<!-- Filtered menu -->
+					<div class="tab-pane active">
+						<div v-if="searchText.length >= 1" v-for="(item, index) in filteredMenu" :key="index" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 agileinfo-tab-content1">
+								<div class="menu-text-right1">
+									<div class="menu-title">
+										<h4>{{item.title}}</h4>
+									</div>
+									<div class="menu-price">
+										<h4 class="price-clr">$ {{((item.price + 0.5)% 1 == 0 ) ? item.price + '0' : item.price}}</h4>
+									</div>
+									<div class="clearfix"></div>
+									<p style="line-height: 1.1; color: #a51c21">{{item.redText}}</p>
+									<p style="line-height: 1.1;" v-html="item.blackText"></p>
+								</div>
+							</div>
+						</div>
 				</div>
+				<!-- Download button -->
 				<div style="display: flex; justify-content: center; text-align: center; margin-top: 40px" >
 					<a
 						href="../../src/assets/el-agave-menu.pdf"
@@ -81,6 +98,23 @@ export default {
 		return {
 			mainMenu: mainMenu,
 			searchText: "",
+		}
+	},
+	computed: {
+		filteredMenu(){
+			var array = []
+			this.mainMenu.forEach((category, index) => {
+				var text = category.category
+				category.menu.forEach((dish, index) => {
+					text = dish.title + " " + dish.redText + " " + dish.price + " " + dish.blackText
+					text = text.replace('undefined', '');
+					text = text.toLowerCase();
+					if(text.indexOf(this.searchText.toLowerCase()) >= 0 ){
+						array.push(dish)
+					}
+				});
+			});
+			return array;
 		}
 	},
   methods: {
