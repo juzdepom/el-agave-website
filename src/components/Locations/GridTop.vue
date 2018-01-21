@@ -1,11 +1,16 @@
 <template>
     <div class="container-fluid about-right about-right-flex">
-        <div class="about-bottom-text custom-background" style="" :style="{'background-image':'url(' + background + ')'}">
+        <div class="about-bottom-text custom-background"
+            style=""
+            :style="{'background-image':'url(' + background + ')'}">
             <h4 class="title1">{{entry.title}}</h4>
             <h3 class="title1">
                 <br><br>{{entry.address}}
                 <br>{{entry.city}}, {{entry.state}}, {{entry.zip}}
-                <br><br><span class="fa fa-phone" aria-hidden="true"></span>&nbsp;&nbsp;{{entry.number}}
+                <br><br><span class="fa fa-phone" aria-hidden="true"></span>&nbsp;&nbsp;
+                <a :href="'tel:'+entry.number"
+                    style="color: white; text-decoration: underline">
+                {{entry.number}}</a>
             </h3>
             <!-- </div> -->
         </div>
@@ -38,6 +43,10 @@ export default {
     border: 4px solid rgb(107, 19, 22);
     background-position: center center;
     background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .about-bottom-text {
     padding: 5.85em 5em;

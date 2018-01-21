@@ -11,7 +11,10 @@
 					11am to 10pm <span class="fa fa-moon-o" aria-hidden="true"></span> <br>
 					Fri, Sat:
 					<span class="fa fa-sun-o" aria-hidden="true"></span>
-					11am to 11pm  <span class="fa fa-moon-o" aria-hidden="true"></span></h2>
+					11am to 11pm  <span class="fa fa-moon-o" aria-hidden="true"></span>
+				</h2>
+				<br>
+				<h2 style="color: #a51c21" class="text-center">Available for Catering and Orders To Go</h2>
 			</card-component>
 			<!-- images -->
 			<slot name="topImages"></slot>
@@ -165,7 +168,8 @@ export default {
 }
 .main-menu-bg {
     border-radius: 10px;
-    background: url(../../images/parchment.jpg);
+	background: url(../../images/parchment.jpg);
+	/* background-repeat: no-repeat; */
     padding: 1em 3em 3em;
 }
 .slide-enter {

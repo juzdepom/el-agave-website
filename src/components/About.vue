@@ -3,11 +3,12 @@
 		<div class="slid-text" :class="{'pull-right': pullRight}" style="padding-top: 30px">
 			<h4 :id="id">{{title}}</h4>
 			<!-- slot -->
-			<slot name="images"></slot>
+			<slot name="image1"></slot>
 			<p v-for="(paragraph, i) in text" :key="i">
 				{{paragraph}}
 				<br><br>
 			</p>
+			<slot name="image2"></slot>
 		</div>
 		<div class="clearfix"> </div>
 		<!-- slot -->

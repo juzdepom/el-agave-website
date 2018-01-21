@@ -15,22 +15,16 @@
       :imagePath="about.imagePath"
       :pullRight="about.pullRight">
       <!-- family photos -->
-      <div slot="images" class="row">
-        <div class="col-sm-6">
+      <div slot="image1">
           <img src="./images/cruz.jpg"
             class="shadow-down"
             style="border-radius: 10px; height: 150px; margin-bottom:30px"/>
-        </div>
-        <div class="col-sm-6">
-          <img src="./images/family.jpg"
-            class="shadow-down"
-            style="border-radius: 10px; height: 150px; margin-bottom:30px"/>
-        </div>
-
-        <!-- <img src="./images/family.jpg"
-          class="shadow-down col-md-12"
-          style="height: 150px; border-radius: 10px"/> -->
       </div>
+      <!-- <div slot="image2">
+        <img src="./images/family.jpg"
+            class="shadow-down"
+            style="border-radius: 10px; height: 150px;"/>
+      </div> -->
       <!-- taco truck -->
       <div slot="addOn" class="pull-right row hidden-xs">
         <img
