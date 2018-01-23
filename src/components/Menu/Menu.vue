@@ -6,15 +6,20 @@
 				<h3 class="w3layouts-title text-center">Open Hours</h3><br>
 
 				<h2 class="text-center">
-					Sun, Mon, Tues, Wed, Thur:
-					<span class="fa fa-sun-o" aria-hidden="true"></span>
-					11am to 10pm <span class="fa fa-moon-o" aria-hidden="true"></span> <br>
-					Fri, Sat:
-					<span class="fa fa-sun-o" aria-hidden="true"></span>
-					11am to 11pm  <span class="fa fa-moon-o" aria-hidden="true"></span>
+					-- Winter Hours --<br>
+					Sun - Thurs / 11AM - 10PM<br>
+					Fri - Sat / 11AM - 11PM<br><br>
+					-- Summer Hours --<br>
+					Sun - Thurs / 11AM - 10PM<br>
+					Fri - Sat / 11AM - 11PM<br>
+					<!-- <span class="fa fa-sun-o" aria-hidden="true"></span> -->
+					<!-- 11am to 10pm <span class="fa fa-moon-o" aria-hidden="true"></span> <br> -->
+					<!-- Fri, Sat: -->
+					<!-- <span class="fa fa-sun-o" aria-hidden="true"></span> -->
+					<!-- 11am to 11pm  <span class="fa fa-moon-o" aria-hidden="true"></span> -->
 				</h2>
 				<br>
-				<h2 style="color: #a51c21" class="text-center">Available for Catering and Orders To Go</h2>
+				<h2 style="color: #a51c21" class="text-center">Available for Catering and Orders To Go<br>(see <a class="scroll" href="#locations">locations</a>)</h2>
 			</card-component>
 			<!-- images -->
 			<slot name="topImages"></slot>
@@ -24,7 +29,6 @@
         			<search-bar-component placeholder="Search entire menu..." v-model="searchText"></search-bar-component>
 					<!-- Nav tabs -->
 					<ul v-if="searchText.length < 1" class="nav nav-tabs" role="tablist" style="border-radius: 5px">
-
 						<li
 							v-for="(m, index) in mainMenu"
 							:key="index"
@@ -35,7 +39,7 @@
 								:aria-controls="m.category.toLowerCase().replace(/\s/g, '-')"
 								role="tab"
 								data-toggle="tab">
-								{{m.category}}
+								{{m.category}} <span style="font-size: 12px">({{m.menu.length}})</span>
 							</a>
 						</li>
 					</ul>

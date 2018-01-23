@@ -24,7 +24,7 @@
 			</div>
             <div id="downArrow" style="text-align:center; position: absolute; left: 48%; bottom: 40px">
                 <a
-                href="#menu"
+                href="#hours"
                 class="scroll fa fa-angle-double-down "
                 aria-hidden="true"
                 style="color: white; font-size: 40px; ">
