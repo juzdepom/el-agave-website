@@ -1,64 +1,70 @@
 <template>
   <div id="app">
-		<navbar-component :navItems="navItems"></navbar-component>
+    <div v-if="!isAdmin">
+      <navbar-component :navItems="navItems"></navbar-component>
 
-    <banner-component></banner-component>
+      <banner-component></banner-component>
 
-		<menu-component>
-      <images-component slot="topImages" :imagePaths="dishImagesMenuTop"></images-component>
-      <images-component slot="bottomImages" :imagePaths="dishImagesMenuBottom"></images-component>
-    </menu-component>
+      <menu-component>
+        <images-component slot="topImages" :imagePaths="dishImagesMenuTop"></images-component>
+        <images-component slot="bottomImages" :imagePaths="dishImagesMenuBottom"></images-component>
+      </menu-component>
 
-		<about-component id="about"
-      :title="about.title"
-      :description="about.description"
-      :imagePath="about.imagePath"
-      :pullRight="about.pullRight">
-      <!-- family photos -->
-      <div slot="image1">
-          <img src="./images/cruz.jpg"
-            class="shadow-down"
-            style="border-radius: 10px; height: 150px; margin-bottom:30px"/>
-      </div>
-      <!-- <div slot="image2">
-        <img src="./images/family.jpg"
-            class="shadow-down"
-            style="border-radius: 10px; height: 150px;"/>
-      </div> -->
-      <!-- taco truck -->
-      <div slot="addOn" class="pull-right row hidden-xs">
-        <img
-          src="./images/taco-truck.png"
-          class="pull-right"
-          style="margin: 0 30px 20px 20px; height: 150px; display: table-cell; vertical-align: bottom;"/>
-        <h4 class="pull-right text-outline" style="margin: 60px 0 0 50px ; ">
-        We also have a Taco Truck!<br><h5 class="pull-left" style="font-size: 25px">700 Ohio Street, Bellingham, WA</h5>
-        </h4>
-      </div>
-    </about-component>
+      <about-component id="about"
+        :title="about.title"
+        :description="about.description"
+        :imagePath="about.imagePath"
+        :pullRight="about.pullRight">
+        <!-- family photos -->
+        <div slot="image1">
+            <img src="./images/cruz.jpg"
+              class="shadow-down"
+              style="border-radius: 10px; height: 150px; margin-bottom:30px"/>
+        </div>
+        <!-- <div slot="image2">
+          <img src="./images/family.jpg"
+              class="shadow-down"
+              style="border-radius: 10px; height: 150px;"/>
+        </div> -->
+        <!-- taco truck -->
+        <div slot="addOn" class="pull-right row hidden-xs">
+          <img
+            src="./images/taco-truck.png"
+            class="pull-right"
+            style="margin: 0 30px 20px 20px; height: 150px; display: table-cell; vertical-align: bottom;"/>
+          <h4 class="pull-right text-outline" style="margin: 60px 0 0 50px ; ">
+          We also have a Taco Truck!<br><h5 class="pull-left" style="font-size: 25px">700 Ohio Street, Bellingham, WA</h5>
+          </h4>
+        </div>
+      </about-component>
 
-		<locations-component></locations-component>
+      <locations-component></locations-component>
 
-    <about-component :title="student.title" :description="student.description" :imagePath="student.imagePath" :pullRight="student.pullRight"></about-component>
+      <about-component :title="student.title" :description="student.description" :imagePath="student.imagePath" :pullRight="student.pullRight"></about-component>
 
-    <testimonials-component></testimonials-component>
+      <testimonials-component></testimonials-component>
 
-    <coupons-component imagePath="coupons.jpg">
-      <images-component slot="imageTop" :imagePaths="dishImagesCouponsTop"></images-component>
-      <images-component slot="imageBottom" :imagePaths="dishImagesCouponsBottom"></images-component>
-    </coupons-component>
+      <coupons-component imagePath="coupons.jpg">
+        <images-component slot="imageTop" :imagePaths="dishImagesCouponsTop"></images-component>
+        <images-component slot="imageBottom" :imagePaths="dishImagesCouponsBottom"></images-component>
+      </coupons-component>
 
-    <footer-component>
-      <h3>Thank you for visiting!</h3><br>
-      Copyright © 2017 El Agave Restaurant. All rights reserved.
-      <br> Coded with ♥ by Julia Gao Miller | Design by W3layouts
-    </footer-component>
-
-
+      <footer-component>
+        <h3>Thank you for visiting!</h3>
+        <a class="btn btn-success admin" @click="login()" href="#admin">Admin Site</a>
+        <br>Copyright © 2017 El Agave Restaurant. All rights reserved.
+        <br> Coded with ♥ by Julia Gao Miller | Design by W3layouts
+      </footer-component>
+    </div>
+    <admin-component v-else :backToMain="backToMain" ></admin-component>
   </div>
+
 </template>
 
 <style>
+  .admin {
+    margin: 15px 0 15px 0;
+  }
   .text-outline {
     text-shadow:
     -1px -1px 0 #000,
@@ -70,6 +76,7 @@
 
 
 <script>
+import Admin from './Admin.vue'
 import Navbar from './components/Navbar/Navbar.vue'
 import Banner from './components/Banner.vue'
 import Testimonials from './components/Testimonials/Testimonials.vue'
@@ -92,9 +99,32 @@ export default {
     CouponsComponent: Coupons,
     ImagesComponent: Images,
     FooterComponent: Footer,
+    AdminComponent: Admin,
   },
+  created(){
+    //if page reloads, then stays in admin website;
+    var isAdmin = localStorage.getItem('isAdmin')
+    this.isAdmin = isAdmin;
+  },
+  methods: {
+    // admin site
+    login(){
+      var loginSuccessful = true;
+      if(loginSuccessful) {
+        this.isAdmin = true;
+        localStorage.setItem('isAdmin', true)
+      }
+    },
+    backToMain(){
+      this.isAdmin = false;
+      localStorage.setItem('isAdmin', false)
+    }
+    // backToMain()
+  },
+
   data () {
     return {
+      isAdmin: Boolean,
       navItems: [
           // {link: `#about`, title: 'About'},
           {link: `#menu`, title: 'Menu'},
