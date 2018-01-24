@@ -19,7 +19,9 @@
 					<!-- 11am to 11pm  <span class="fa fa-moon-o" aria-hidden="true"></span> -->
 				</h2>
 				<br>
-				<h2 style="color: #a51c21" class="text-center">Available for Catering and Orders To Go<br>(see <a class="scroll" href="#locations">locations</a>)</h2>
+				<h2 style="color: #a51c21" class="text-center">
+					Available for Catering and Orders To Go<br>
+					(see <a class="scroll" href="#locations">locations</a> for phone number)</h2>
 			</card-component>
 			<!-- images -->
 			<slot name="topImages"></slot>
