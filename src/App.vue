@@ -5,7 +5,7 @@
 
       <banner-component></banner-component>
 
-      <menu-component>
+      <menu-component :hours="hours" :mainMenu="menu">
         <images-component slot="topImages" :imagePaths="dishImagesMenuTop"></images-component>
         <images-component slot="bottomImages" :imagePaths="dishImagesMenuBottom"></images-component>
       </menu-component>
@@ -38,13 +38,13 @@
         </div>
       </about-component>
 
-      <locations-component></locations-component>
+      <locations-component :samish-number="numbers.samish" :clubhouse-number="numbers.clubhouse" :harris-number="numbers.harriss"></locations-component>
 
       <about-component :title="student.title" :description="student.description" :imagePath="student.imagePath" :pullRight="student.pullRight"></about-component>
 
       <testimonials-component></testimonials-component>
 
-      <coupons-component imagePath="coupons.jpg">
+      <coupons-component imagePath="coupons.jpg" :description="couponDescription">
         <images-component slot="imageTop" :imagePaths="dishImagesCouponsTop"></images-component>
         <images-component slot="imageBottom" :imagePaths="dishImagesCouponsBottom"></images-component>
       </coupons-component>
@@ -56,7 +56,7 @@
         <br> Coded with ♥ by Julia Gao Miller | Design by W3layouts
       </footer-component>
     </div>
-    <admin-component v-else :backToMain="backToMain" ></admin-component>
+    <admin-component v-if="isAdmin" :backToMain="backToMain" ></admin-component>
   </div>
 
 </template>
@@ -102,29 +102,77 @@ export default {
     AdminComponent: Admin,
   },
   created(){
-    //if page reloads, then stays in admin website;
-    var isAdmin = localStorage.getItem('isAdmin')
-    this.isAdmin = isAdmin;
+    // if(localStorage.getItem('isAdmin')!=null){
+    //   var isAdmin = localStorage.getItem('isAdmin')
+    //   console.log('HEREEEE', localStorage.getItem('isAdmin'))
+    //   this.isAdmin = isAdmin;
+    // } else {
+    //   this.isAdmin = false;
+    //   this.localStorage.setItem('isAdmin', false)
+    // }
+    this.$store.dispatch('getData')
   },
+  // beforeCreate(){
+  //   //if page reloads, then stays in admin website;
+
+  //   if(!isAdmin){ this.$store.dispatch('getData') }
+
+  // },
   methods: {
     // admin site
     login(){
       var loginSuccessful = true;
       if(loginSuccessful) {
         this.isAdmin = true;
-        localStorage.setItem('isAdmin', true)
+        // localStorage.setItem('isAdmin', true)
       }
     },
     backToMain(){
       this.isAdmin = false;
-      localStorage.setItem('isAdmin', false)
+      // localStorage.setItem('isAdmin', false)
     }
-    // backToMain()
+  },
+  computed:{
+    // isAdmin(){
+    //   return localStorage.getItem('isAdmin')
+    // },
+    about(){
+      var description = this.$store.getters.description
+      var about = {
+        title: "About Us",
+        description: description,
+        imagePath: "agave-night.jpg",
+        pullRight: false,
+      }
+      return about
+    },
+    student(){
+      var description = this.$store.getters.description
+      var student = {
+        title: "We Support Our Students",
+        description: description,
+        imagePath: "wwu.jpg",
+        pullRight: false,
+      }
+      return student
+    },
+    couponDescription(){
+      return this.$store.getters.deals
+    },
+    numbers(){
+      return this.$store.getters.numbers
+    },
+    hours(){
+      return this.$store.getters.openHours
+    },
+    menu(){
+      return this.$store.getters.menu
+    }
   },
 
   data () {
     return {
-      isAdmin: Boolean,
+      isAdmin: false,
       navItems: [
           // {link: `#about`, title: 'About'},
           {link: `#menu`, title: 'Menu'},
@@ -134,20 +182,6 @@ export default {
           {link: `#coupons`, title: 'Deals'},
 
       ],
-      about: {
-        title: "About Us",
-        //in store
-        description: "El Agave offers fresh, authentic Mexican food in a comfortable family environment at an affordable price. We only use the freshest ingredients to prepare all of our dishes – they are all prepared daily by our family in order to ensure the quality of taste for which El Agave has become known for. So come in, taste the flavor of food and enjoy the casual ambiance and attentive servers.\n If you are in the mood for sizzling fajitas, mouth-watering enchildadas or a great taco salad all in a clean, fun, comfortable atmosphere, you will not be disappointed. We are family-owned, and do our best to treat each of our customers as one of our own family. We look forward to meeting you!",
-        imagePath: "agave-night.jpg",
-        pullRight: false,
-      },
-      student: {
-        title: "We Support Our Students",
-        //in store
-        description: "WWU, WCC and BTC get 20% off when they present an id!",
-        imagePath: "wwu.jpg",
-        pullRight: false,
-      },
       dishImagesMenuTop: ['plate1.jpg', 'plate2.jpg', 'plate3.jpg', 'plate4.jpg'],
       dishImagesMenuBottom: ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
       dishImagesCouponsTop: ['dish1.jpg', 'dish2.jpg', 'dish3.jpg', 'dish4.jpg'],

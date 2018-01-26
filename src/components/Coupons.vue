@@ -12,9 +12,8 @@
                         style="color: white; padding-top: 30px">Deals</h3>
                     <div class="row text-center"
                         style="width: 80%; margin: auto; padding-top:10px; ">
-                        <p style="color:white" >
-                            We've included some coupons for first time customers!
-                            <br>Coupons are valid on your phone (or printed) in all three restaurant locations.
+                        <p style="color:white" v-html="description" >
+
                         </p>
                         <a
                             href="../src/assets/el-agave-coupon.pdf"
@@ -34,7 +33,7 @@
 
 <script>
 export default {
-    props: ['imagePath'],
+    props: ['imagePath', 'description'],
     computed: {
         background(){
             var path = '../images/' + this.imagePath

@@ -16,6 +16,7 @@ import GridTop from './GridTop.vue'
 import GridBottom from './GridBottom.vue'
 
 export default {
+    props: ['samishNumber', 'clubhouseNumber', 'harrisNumber'],
     components: {
         MapComponent: Map,
         GridTopComponent: GridTop,
@@ -23,8 +24,7 @@ export default {
     },
     computed: {
         samish(){
-            // in store
-            var number = "360-676-0340"
+            var number = this.samishNumber
             var dic = {
                 backgroundUrl: "samish.png",
                 title: "Location #1",
@@ -37,7 +37,7 @@ export default {
             return dic
         },
         clubhouse(){
-            var number = "360-393-3853"
+            var number = this.clubhouseNumber
             var dic = {
                 backgroundUrl: "clubhouse2.png",
                 title: "Location #2",
@@ -50,7 +50,7 @@ export default {
             return dic
         },
         harris(){
-            var number = "360-733-9900"
+            var number = this.harrisNumber
             var dic = {
                 backgroundUrl: "harris.png",
                 title: "Location #3",
@@ -58,7 +58,7 @@ export default {
                 city: "Bellingham",
                 state: "WA",
                 zip: "98225",
-                number: "360-733-9900"
+                number: number
             }
             return dic
         }

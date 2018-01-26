@@ -26,8 +26,8 @@ export default {
 			return required
 		},
 		text(){
-			var lines = this.description.split('\n')
-			return lines
+			// var lines = this.description.split('\n')
+			return this.description
 		}
 	}
 }

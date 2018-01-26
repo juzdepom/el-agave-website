@@ -21,7 +21,7 @@ export default {
         color: white
     }
     .footer-container {
-        height: 170px;
+        /* height: 170px; */
         background-color: rgb(97, 16, 19);
     }
     .footer-card {
@@ -29,6 +29,7 @@ export default {
         justify-content: center;
         align-items:center;
         padding-top: 30px;
+        padding-bottom: 30px;
         text-align: center;
     }
 </style>

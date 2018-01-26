@@ -107,16 +107,14 @@ import Card from './Card.vue'
 import Searchbar from './Searchbar.vue'
 
 export default {
-  components: {
+	props: ['hours', 'mainMenu'],
+	components: {
 	SearchBarComponent: Searchbar,
 	CardComponent: Card,
-  },
+	},
 	data(){
 		return {
-			mainMenu: mainMenu,
 			searchText: "",
-			//in store
-			hours: "-- Winter Hours --<br>Sun - Thurs / 11AM - 10PM<br>Fri - Sat / 11AM - 11PM<br><br>-- Summer Hours --<br>Sun - Thurs / 11AM - 10PM<br>Fri - Sat / 11AM - 11PM<br>"
 		}
 	},
 	computed: {

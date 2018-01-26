@@ -25,48 +25,55 @@
         </div>
         <div class="container-fluid text-center admin-margins form-group">
             <br><br>
-            <h1>Welcome to the El Agave Admin!</h1>
+            <h1>&#9881; Welcome to the El Agave Admin! &#9881;</h1>
 
             <h2>Open Hours</h2>
-            <i>Mini coding tutorial: Including <span style="color: red;">&lt;br&gt;</span> will create a new line.</i>
+            <i>Mini coding tutorial: Including <span class="red">&lt;br&gt;</span> will create a new line.</i>
             <br>
-            <textarea class="form-control" ></textarea>
+            <textarea class="form-control" v-model="openHours" ></textarea>
 
-            <h2>Menu</h2>
-            <i>Mini coding tutorial: the menu below is written in JSON, a popular way of storing data on servers.<br>
-            To add a new menu item, write { title: "Nachos", redText: "Description of Nachos", price: 9.95 },
-            </i>
-            <br>
-            <textarea class="form-control"></textarea>
             <h2>About Us</h2>
-            <textarea class="form-control"></textarea>
+            <textarea class="form-control" v-model="aboutUs" style="height: 150px"></textarea>
+
             <h2>Locations</h2>
             <div class="container">
                 <i>Samish Phone Number</i>
                 <br>
-                <input id="samishphone" class="form-control"/>
-                <!-- <label for="samishphone">Samish Phone Number</label> -->
+                <input id="samishphone" class="form-control" v-model="numbers.samish"/>
                 <br>
                 <i>Clubhouse Phone Number</i>
                 <br>
-                <input id="clubhousephone" class="form-control"/>
-                <!-- <label for="clubhousephone">Clubhouse Phone Number</label> -->
+                <input id="clubhousephone" class="form-control" v-model="numbers.clubhouse"/>
                 <br>
                 <i>Harris Phone Number</i>
                 <br>
-                <input id="harrisphone" class="form-control"/>
-                <!-- <label for="harrisphone">Harris Phone Number</label> -->
+                <input id="harrisphone" class="form-control" v-model="numbers.harris"/>
                 <br>
             </div>
 
             <h2>We Support Our Students</h2>
-            <textarea class="form-control"></textarea>
+            <textarea class="form-control" v-model="supportStudents"></textarea>
+
             <h2>Yelp Reviews</h2>
-                <div style="width: 50%; margin-left: 25%" >
-                    <i class="" style="width: 50%; ">For alterations please email <span style="color: blue">julia.gao.miller@gmail.com:</span> title, description, submission date, author, author image. </i>
-                </div>
+            <div style="width: 50%; margin-left: 25%" >
+                <i class="" style="width: 50%; ">For alterations please email <span style="color: blue">julia.gao.miller@gmail.com:</span> title, description, submission date, author, author image. </i>
+            </div>
+
             <h2>Deals</h2>
-            <textarea class="form-control"></textarea>
+            <textarea class="form-control" v-model="deals"></textarea>
+
+            <h2>Menu</h2>
+            <i>Mini coding tutorial: the menu below is written in JSON, a popular method of storing data.<br>
+            To add a new menu item, write <span style="color: red">{ title: "Nachos", redText: "Description of Nachos", price: 9.95 },</span>
+            <br>
+            Important: Don't forget to include the "<span class="red" > , </span>" after the "<span class="red"> } </span>" otherwise the menu won't show up correctly.
+            <br>
+            Be very careful when editting the menu because a syntax mistake might break the code.
+            <br>
+            If you're uncertain about any of this, please email (julia.gao.miller@gmail.com) or text (626-709-7537) Julia ;-)
+            </i>
+            <br>
+            <textarea class="form-control" style="height: 500px" v-model="menu"></textarea>
         </div>
 
     </div>
@@ -74,20 +81,43 @@
 
 <script>
 export default {
+    created(){
+        this.$store.dispatch('getData')
+    },
     props: {
         backToMain: {
             type: Function,
+        }
+    },
+    computed: {
+        openHours(){
+            return this.$store.getters.openHours
+        },
+        menu(){
+            let menu = this.$store.getters.menu
+            let json = JSON.stringify(menu, null, 2)
+            return json
+        },
+        aboutUs(){
+            return this.$store.getters.aboutUs
+        },
+        numbers(){
+            return this.$store.getters.numbers
+        },
+        supportStudents(){
+            return this.$store.getters.supportStudents
+        },
+        deals(){
+            return this.$store.getters.deals
         }
     }
 }
 </script>
 
 <style>
-    .admin-margins input {
-        /* margin-top: 20px; */
-        /* margin-left: 0; */
+    .admin-margins .red {
+        color: red;
     }
-
     .admin-margins label {
         margin-left: 10px;
     }
