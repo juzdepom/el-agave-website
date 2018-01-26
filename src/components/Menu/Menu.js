@@ -1,3 +1,4 @@
+//in store
 const mainMenu =
     [
         {

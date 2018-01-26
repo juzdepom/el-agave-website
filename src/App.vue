@@ -136,12 +136,14 @@ export default {
       ],
       about: {
         title: "About Us",
+        //in store
         description: "El Agave offers fresh, authentic Mexican food in a comfortable family environment at an affordable price. We only use the freshest ingredients to prepare all of our dishes – they are all prepared daily by our family in order to ensure the quality of taste for which El Agave has become known for. So come in, taste the flavor of food and enjoy the casual ambiance and attentive servers.\n If you are in the mood for sizzling fajitas, mouth-watering enchildadas or a great taco salad all in a clean, fun, comfortable atmosphere, you will not be disappointed. We are family-owned, and do our best to treat each of our customers as one of our own family. We look forward to meeting you!",
         imagePath: "agave-night.jpg",
         pullRight: false,
       },
       student: {
         title: "We Support Our Students",
+        //in store
         description: "WWU, WCC and BTC get 20% off when they present an id!",
         imagePath: "wwu.jpg",
         pullRight: false,

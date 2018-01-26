@@ -22,28 +22,36 @@ export default {
         GridBottomComponent: GridBottom,
     },
     computed: {
-    },
-    data(){
-        return {
-            samish: {
+        samish(){
+            // in store
+            var number = "360-676-0340"
+            var dic = {
                 backgroundUrl: "samish.png",
                 title: "Location #1",
                 address: "207 N Samish Way",
                 city: "Bellingham",
                 state: "WA",
                 zip: "98225",
-                number: "360-676-0340"
-            },
-            clubhouse: {
+                number: number
+            }
+            return dic
+        },
+        clubhouse(){
+            var number = "360-393-3853"
+            var dic = {
                 backgroundUrl: "clubhouse2.png",
                 title: "Location #2",
                 address: "4 Club House Circle",
                 city: "Bellingham",
                 state: "WA",
                 zip: "98225",
-                number: "360-393-3853"
-            },
-            harris: {
+                number: number,
+            }
+            return dic
+        },
+        harris(){
+            var number = "360-733-9900"
+            var dic = {
                 backgroundUrl: "harris.png",
                 title: "Location #3",
                 address: "1111 Harris Ave",
@@ -52,9 +60,11 @@ export default {
                 zip: "98225",
                 number: "360-733-9900"
             }
+            return dic
         }
 
-    }
+    },
+
 }
 </script>
 

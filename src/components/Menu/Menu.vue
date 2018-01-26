@@ -4,19 +4,7 @@
 			<!-- open hours -->
 			<card-component id="hours">
 				<h3 class="w3layouts-title text-center">Open Hours</h3><br>
-
-				<h2 class="text-center">
-					-- Winter Hours --<br>
-					Sun - Thurs / 11AM - 10PM<br>
-					Fri - Sat / 11AM - 11PM<br><br>
-					-- Summer Hours --<br>
-					Sun - Thurs / 11AM - 10PM<br>
-					Fri - Sat / 11AM - 11PM<br>
-					<!-- <span class="fa fa-sun-o" aria-hidden="true"></span> -->
-					<!-- 11am to 10pm <span class="fa fa-moon-o" aria-hidden="true"></span> <br> -->
-					<!-- Fri, Sat: -->
-					<!-- <span class="fa fa-sun-o" aria-hidden="true"></span> -->
-					<!-- 11am to 11pm  <span class="fa fa-moon-o" aria-hidden="true"></span> -->
+				<h2 class="text-center" v-html="hours">
 				</h2>
 				<br>
 				<h2 style="color: #a51c21" class="text-center">
@@ -127,6 +115,8 @@ export default {
 		return {
 			mainMenu: mainMenu,
 			searchText: "",
+			//in store
+			hours: "-- Winter Hours --<br>Sun - Thurs / 11AM - 10PM<br>Fri - Sat / 11AM - 11PM<br><br>-- Summer Hours --<br>Sun - Thurs / 11AM - 10PM<br>Fri - Sat / 11AM - 11PM<br>"
 		}
 	},
 	computed: {

@@ -1,11 +1,11 @@
 <template>
-    <div class="container-fluid admin-margins " id="admin">
+    <div class="container-fluid admin-margins" id="admin">
         <div class="header-main"
             style="background-color: white; border-bottom: 1px solid lightgray; height: 55px" >
             <div class="container">
                 <nav class="navbar navbar-default navbar-expand-sm">
                     <div class="navbar-header">
-                        <nav-collapse-button-component></nav-collapse-button-component>
+                        <!-- <nav-collapse-button-component></nav-collapse-button-component> -->
                     </div>
                         <a
                             href="#app"
@@ -41,11 +41,23 @@
             <h2>About Us</h2>
             <textarea class="form-control"></textarea>
             <h2>Locations</h2>
-            <!-- <div> -->
-                <textarea class="form-control"></textarea><br>
-                <textarea class="form-control"></textarea><br>
-                <textarea class="form-control"></textarea><br>
-            <!-- </div> -->
+            <div class="container">
+                <i>Samish Phone Number</i>
+                <br>
+                <input id="samishphone" class="form-control"/>
+                <!-- <label for="samishphone">Samish Phone Number</label> -->
+                <br>
+                <i>Clubhouse Phone Number</i>
+                <br>
+                <input id="clubhousephone" class="form-control"/>
+                <!-- <label for="clubhousephone">Clubhouse Phone Number</label> -->
+                <br>
+                <i>Harris Phone Number</i>
+                <br>
+                <input id="harrisphone" class="form-control"/>
+                <!-- <label for="harrisphone">Harris Phone Number</label> -->
+                <br>
+            </div>
 
             <h2>We Support Our Students</h2>
             <textarea class="form-control"></textarea>
@@ -71,6 +83,14 @@ export default {
 </script>
 
 <style>
+    .admin-margins input {
+        /* margin-top: 20px; */
+        /* margin-left: 0; */
+    }
+
+    .admin-margins label {
+        margin-left: 10px;
+    }
 
     .admin-margins a {
         margin-top: 10px;
@@ -80,7 +100,7 @@ export default {
         margin-top: 20px;
     }
     textarea {
-        width: 500px;
+        width: 90%;
         margin-top: 10px;
         /* margin-bottom: 20px; */
     }

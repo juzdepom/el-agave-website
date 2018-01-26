@@ -29,8 +29,7 @@ export default {
 			var lines = this.description.split('\n')
 			return lines
 		}
- 	}
-
+	}
 }
 </script>
 
