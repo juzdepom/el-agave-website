@@ -9,7 +9,7 @@
                     </div>
                         <a
                             href="#app"
-                            class="btn btn-warning back pull-left"
+                            class="btn btn-danger back pull-left"
                             @click="backToMain()">
                             <span class="fa fa-chevron-left"></span>
                             &nbsp;&nbsp;Back to Main Menu (don't save)
