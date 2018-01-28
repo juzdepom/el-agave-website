@@ -38,7 +38,7 @@
         </div>
       </about-component>
 
-      <locations-component :samish-number="numbers.samish" :clubhouse-number="numbers.clubhouse" :harris-number="numbers.harris"></locations-component>
+      <locations-component :samishNumber="numbers.samish" :clubhouseNumber="numbers.clubhouse" :harrisNumber="numbers.harris"></locations-component>
 
       <about-component :title="student.title" :description="student.description" :imagePath="student.imagePath" :pullRight="student.pullRight"></about-component>
 
@@ -107,8 +107,7 @@ export default {
           return response.json()
       })
       .then(data => {
-          this.admin = Object.values(data)[0]
-          console.log(this.admin)
+          this.admin = data;
       })
   },
   data () {

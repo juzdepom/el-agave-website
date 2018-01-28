@@ -31,29 +31,29 @@
             <h2>Open Hours</h2>
             <i>Mini coding tutorial: Including <span class="red">&lt;br&gt;</span> will create a new line.</i>
             <br>
-            <textarea class="form-control" v-model="openHours" ></textarea>
+            <textarea class="form-control" v-model="admin.openHours" ></textarea>
 
             <h2>About Us</h2>
-            <textarea class="form-control" v-model="aboutUs" style="height: 150px"></textarea>
+            <textarea class="form-control" v-model="admin.aboutUs" style="height: 150px"></textarea>
 
             <h2>Locations</h2>
             <div class="container">
                 <i>Samish Phone Number</i>
                 <br>
-                <input id="samishphone" class="form-control" v-model="numbers.samish"/>
+                <input id="samishphone" class="form-control" v-model="admin.numbers.samish"/>
                 <br>
                 <i>Clubhouse Phone Number</i>
                 <br>
-                <input id="clubhousephone" class="form-control" v-model="numbers.clubhouse"/>
+                <input id="clubhousephone" class="form-control" v-model="admin.numbers.clubhouse"/>
                 <br>
                 <i>Harris Phone Number</i>
                 <br>
-                <input id="harrisphone" class="form-control" v-model="numbers.harris"/>
+                <input id="harrisphone" class="form-control" v-model="admin.numbers.harris"/>
                 <br>
             </div>
 
             <h2>We Support Our Students</h2>
-            <textarea class="form-control" v-model="supportStudents"></textarea>
+            <textarea class="form-control" v-model="admin.supportStudents"></textarea>
 
             <h2>Yelp Reviews</h2>
             <div style="width: 50%; margin-left: 25%" >
@@ -61,7 +61,7 @@
             </div>
 
             <h2>Deals</h2>
-            <textarea class="form-control" v-model="deals"></textarea>
+            <textarea class="form-control" v-model="admin.deals"></textarea>
 
             <h2>Menu</h2>
             <i>Mini coding tutorial: the menu below is written in JSON, a popular method of storing data.<br>
@@ -74,7 +74,7 @@
             If you're uncertain about any of this, please email (julia.gao.miller@gmail.com) or text (626-709-7537) Julia ;-)
             </i>
             <br>
-            <textarea class="form-control" style="height: 500px" v-model="menu"></textarea>
+            <textarea class="form-control" style="height: 500px" v-model="menu" ></textarea>
         </div>
 
     </div>
@@ -87,34 +87,41 @@ export default {
         window.scrollTo(0,0);
     },
     props: ['backToMain', 'admin'],
+    data(){
+        return {
+            menu: JSON.stringify(this.admin.menu, null, 2)
+        }
 
+    },
+    watch: {
+        menu: function(val){
+            var object = {}
+            if (val != ""){
+                object = JSON.parse(val)
+            }
+            this.admin.menu = object;
+        }
+    },
+    // computed: {
+    //     menu(){
+    //         return JSON.stringify(this.admin.menu, null, 2)
+    //     }
+    // },
     methods: {
         save(){
+            // this.$http.put('data.json', this.admin)
+            //     .then(response => {
+            //         return response.json()
+            //     }, error => {
+            //         console.log(error)
+            //     });
+
+            // return JSON.stringify(data, null, 2)
+
             console.log('saved!')
         }
     },
-    computed: {
-        openHours(){
-            return this.admin.openHours
-        },
-        menu(){
-            let menu = this.admin.menu
-            let json = JSON.stringify(menu, null, 2)
-            return json
-        },
-        aboutUs(){
-            return this.admin.aboutUs
-        },
-        numbers(){
-            return this.admin.numbers
-        },
-        supportStudents(){
-            return this.admin.supportStudents
-        },
-        deals(){
-            return this.admin.deals
-        }
-    }
+
 }
 </script>
 
