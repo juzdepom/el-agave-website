@@ -17,6 +17,7 @@
                         <a
                             href="#app"
                             class="btn btn-success pull-right"
+                            @click="save()"
                             >
                             Save Changes
                         </a>
@@ -80,35 +81,38 @@
 </template>
 
 <script>
+
 export default {
     created(){
-        this.$store.dispatch('getData')
+        window.scrollTo(0,0);
     },
-    props: {
-        backToMain: {
-            type: Function,
+    props: ['backToMain', 'admin'],
+
+    methods: {
+        save(){
+            console.log('saved!')
         }
     },
     computed: {
         openHours(){
-            return this.$store.getters.openHours
+            return this.admin.openHours
         },
         menu(){
-            let menu = this.$store.getters.menu
+            let menu = this.admin.menu
             let json = JSON.stringify(menu, null, 2)
             return json
         },
         aboutUs(){
-            return this.$store.getters.aboutUs
+            return this.admin.aboutUs
         },
         numbers(){
-            return this.$store.getters.numbers
+            return this.admin.numbers
         },
         supportStudents(){
-            return this.$store.getters.supportStudents
+            return this.admin.supportStudents
         },
         deals(){
-            return this.$store.getters.deals
+            return this.admin.deals
         }
     }
 }

@@ -38,7 +38,7 @@
         </div>
       </about-component>
 
-      <locations-component :samish-number="numbers.samish" :clubhouse-number="numbers.clubhouse" :harris-number="numbers.harriss"></locations-component>
+      <locations-component :samish-number="numbers.samish" :clubhouse-number="numbers.clubhouse" :harris-number="numbers.harris"></locations-component>
 
       <about-component :title="student.title" :description="student.description" :imagePath="student.imagePath" :pullRight="student.pullRight"></about-component>
 
@@ -56,7 +56,7 @@
         <br> Coded with ♥ by Julia Gao Miller | Design by W3layouts
       </footer-component>
     </div>
-    <admin-component v-if="isAdmin" :backToMain="backToMain" ></admin-component>
+    <admin-component v-if="isAdmin" :backToMain="backToMain" :admin="admin" ></admin-component>
   </div>
 
 </template>
@@ -102,29 +102,38 @@ export default {
     AdminComponent: Admin,
   },
   created(){
-    // if(localStorage.getItem('isAdmin')!=null){
-    //   var isAdmin = localStorage.getItem('isAdmin')
-    //   console.log('HEREEEE', localStorage.getItem('isAdmin'))
-    //   this.isAdmin = isAdmin;
-    // } else {
-    //   this.isAdmin = false;
-    //   this.localStorage.setItem('isAdmin', false)
-    // }
-    this.$store.dispatch('getData')
+    this.$http.get('data.json')
+      .then(response => {
+          return response.json()
+      })
+      .then(data => {
+          this.admin = Object.values(data)[0]
+          console.log(this.admin)
+      })
   },
-  // beforeCreate(){
-  //   //if page reloads, then stays in admin website;
-
-  //   if(!isAdmin){ this.$store.dispatch('getData') }
-
-  // },
+  data () {
+    return {
+      admin: {},
+      isAdmin: false,
+      navItems: [
+          {link: `#menu`, title: 'Menu'},
+          {link: `#about`, title: 'About'},
+          {link: `#locations`, title: "Locations"},
+          {link: `#testimonials`, title: 'Fan Mail'},
+          {link: `#coupons`, title: 'Deals'},
+      ],
+      dishImagesMenuTop: ['plate1.jpg', 'plate2.jpg', 'plate3.jpg', 'plate4.jpg'],
+      dishImagesMenuBottom: ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
+      dishImagesCouponsTop: ['dish1.jpg', 'dish2.jpg', 'dish3.jpg', 'dish4.jpg'],
+      dishImagesCouponsBottom: ['5.jpg', '6.jpg', '7.jpg', '8.jpg'],
+    }
+  },
   methods: {
     // admin site
     login(){
       var loginSuccessful = true;
-      if(loginSuccessful) {
+      if(loginSuccessful){
         this.isAdmin = true;
-        // localStorage.setItem('isAdmin', true)
       }
     },
     backToMain(){
@@ -133,11 +142,8 @@ export default {
     }
   },
   computed:{
-    // isAdmin(){
-    //   return localStorage.getItem('isAdmin')
-    // },
     about(){
-      var description = this.$store.getters.description
+      var description = this.admin.aboutUs
       var about = {
         title: "About Us",
         description: description,
@@ -147,7 +153,7 @@ export default {
       return about
     },
     student(){
-      var description = this.$store.getters.description
+      var description = this.admin.supportStudents
       var student = {
         title: "We Support Our Students",
         description: description,
@@ -157,37 +163,18 @@ export default {
       return student
     },
     couponDescription(){
-      return this.$store.getters.deals
+      return this.admin.deals
     },
     numbers(){
-      return this.$store.getters.numbers
+      return this.admin.numbers
     },
     hours(){
-      return this.$store.getters.openHours
+      return this.admin.openHours
     },
     menu(){
-      return this.$store.getters.menu
+      return this.admin.menu
     }
   },
-
-  data () {
-    return {
-      isAdmin: false,
-      navItems: [
-          // {link: `#about`, title: 'About'},
-          {link: `#menu`, title: 'Menu'},
-          {link: `#about`, title: 'About'},
-          {link: `#locations`, title: "Locations"},
-          {link: `#testimonials`, title: 'Fan Mail'},
-          {link: `#coupons`, title: 'Deals'},
-
-      ],
-      dishImagesMenuTop: ['plate1.jpg', 'plate2.jpg', 'plate3.jpg', 'plate4.jpg'],
-      dishImagesMenuBottom: ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
-      dishImagesCouponsTop: ['dish1.jpg', 'dish2.jpg', 'dish3.jpg', 'dish4.jpg'],
-      dishImagesCouponsBottom: ['5.jpg', '6.jpg', '7.jpg', '8.jpg'],
-    }
-  }
 }
 
 $(document).ready(function () {
