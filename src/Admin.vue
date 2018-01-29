@@ -25,7 +25,6 @@
                 </nav>
             </div>
         </div>
-    <!-- @click="save()" -->
         <div class="container-fluid text-center admin-margins form-group">
             <br><br>
             <!-- modal -->
@@ -34,6 +33,7 @@
                     <div class="modal-content" style="background-color: white" >
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
                     </div>
                     <div class="modal-body" style="font-family: 'PT Sans', sans-serif;">
                         <h3 style="font-family: 'Helvetica'">Saved!</h3>
@@ -120,6 +120,7 @@ export default {
                 object = JSON.parse(val)
             }
             this.admin.menu = object;
+
         }
     },
     methods: {

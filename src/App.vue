@@ -49,9 +49,25 @@
         <images-component slot="imageBottom" :imagePaths="dishImagesCouponsBottom"></images-component>
       </coupons-component>
 
+      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+        <div class="modal-dialog" >
+            <div class="modal-content" style="background-color: white; padding-top: 0" >
+              <div class="modal-body" style="padding-top: 0">
+                  <p style="color: black; padding-bottom: 0px; padding-top: 5px;">Please enter the admin password.</p>
+                  <input type="password" class="form-control" v-model="inputPassword">
+                  <p style="padding-bottom: 0px; padding-top: 0px; color: red;" v-if="incorrectPassword">Incorrect password.</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary" @click="login()">Enter</button>
+              </div>
+            </div>
+        </div>
+      </div>
+
       <footer-component>
         <h3>Thank you for visiting!</h3>
-        <a class="btn btn-success admin" @click="login()" href="#admin">Admin Site</a>
+        <a class="btn btn-success admin" href="#admin" data-toggle="modal" data-target="#loginModal">Admin Site</a>
         <br>Copyright © 2017 El Agave Restaurant. All rights reserved.
         <br> Coded with ♥ by
         <a href="https://www.linkedin.com/in/julia-gao-miller/"
@@ -116,6 +132,9 @@ export default {
   },
   data () {
     return {
+      password: "josecruz6.cl",
+      inputPassword: "",
+      incorrectPassword: false,
       admin: {},
       isAdmin: false,
       navItems: [
@@ -134,9 +153,13 @@ export default {
   methods: {
     // admin site
     login(){
-      var loginSuccessful = true;
-      if(loginSuccessful){
+      if(this.password == this.inputPassword){
+        this.incorrectPassword = false;
         this.isAdmin = true;
+        this.inputPassword = "";
+        $('#loginModal').modal('hide');
+      } else {
+        this.incorrectPassword = true;
       }
     },
     backToMain(){
