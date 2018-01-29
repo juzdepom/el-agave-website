@@ -36,7 +36,7 @@
 
                     </div>
                     <div class="modal-body" style="font-family: 'PT Sans', sans-serif;">
-                        <h3 style="font-family: 'Helvetica'">Saved!</h3>
+                        <h2 style="margin-top: 0">Saved!</h2>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -47,6 +47,42 @@
             </div>
             <!-- modal -->
             <h1>&#9881; Welcome to the El Agave Admin! &#9881;</h1>
+            <br>
+            <div style="border: 1px solid lightgray; display: inline-block; padding: 0 20px 20px 20px">
+                <h2>Change Password</h2>
+                <br>
+                <i>Current Password</i>
+                <br>
+                <input v-model="oldPassword"
+                    data-toggle="password"
+                    id="password"
+                    name="password"
+                    class="form-control"
+                    style="margin-bottom: 10px"
+                    type="password">
+                <span v-if="correctPassword==1" class="fa fa-check" style="color:green" ></span>
+                <span v-if="correctPassword==0" class="fa fa-times" style="color:red"></span>
+
+                <br>
+                <i>New Password</i>
+                <br>
+                <input
+                    v-model="newPassword"
+                    style="margin-bottom: 10px"
+                    class="form-control"
+                    type="password">
+
+                <br>
+                <i>Retype New Password</i>
+                <br>
+                <input
+                    v-model="retypePassword"
+                    class="form-control"
+                    type="password">
+                <span v-if="samePassword==0" class="fa fa-times" style="color: red"></span>
+                <span v-if="samePassword==1" class="fa fa-check" style="color: green"></span>
+            </div>
+
 
             <h2>Open Hours</h2>
             <i>Mini coding tutorial: Including <span class="red">&lt;br&gt;</span> will create a new line.</i>
@@ -102,6 +138,7 @@
 
 <script>
 
+
 export default {
     created(){
         window.scrollTo(0,0);
@@ -109,7 +146,10 @@ export default {
     props: ['backToMain', 'admin'],
     data(){
         return {
-            menu: JSON.stringify(this.admin.menu, null, 2)
+            menu: JSON.stringify(this.admin.menu, null, 2),
+            oldPassword: "",
+            newPassword: "",
+            retypePassword: "",
         }
 
     },
@@ -121,6 +161,9 @@ export default {
             }
             this.admin.menu = object;
 
+
+            //ADD PASSWORD TO FIREBASE!
+// this.admin.push({password: 'josecruz6.cl'})
         }
     },
     methods: {
@@ -131,10 +174,23 @@ export default {
                 }, error => {
                     console.log(error)
                 });
-
             console.log('saved!')
         }
     },
+    computed: {
+        correctPassword(){
+            if(this.oldPassword==""){return 2}
+            else {
+                return (this.admin.password == this.oldPassword) ? 1 : 0;
+            }
+        },
+        samePassword(){
+            if(this.retypePassword==""){return 2}
+            else {
+                return (this.newPassword == this.retypePassword) ? 1 : 0;
+            }
+        }
+    }
 
 }
 </script>

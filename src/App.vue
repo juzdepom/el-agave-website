@@ -54,8 +54,17 @@
             <div class="modal-content" style="background-color: white; padding-top: 0" >
               <div class="modal-body" style="padding-top: 0">
                   <p style="color: black; padding-bottom: 0px; padding-top: 5px;">Please enter the admin password.</p>
-                  <input type="password" class="form-control" v-model="inputPassword">
+                  <div>
+                  <input
+                    id="password-field"
+                    name="password"
+                    type="password"
+                    class="form-control"
+                    v-model="inputPassword">
+                  <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                  </div>
                   <p style="padding-bottom: 0px; padding-top: 0px; color: red;" v-if="incorrectPassword">Incorrect password.</p>
+
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Cancel</button>
@@ -92,6 +101,14 @@
     -1px 1px 0 #000,
     1px 1px 0 #000;
   }
+  .field-icon {
+    float: right;
+    margin-right: 5px;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+}
 </style>
 
 
@@ -106,6 +123,8 @@ import About from './components/About.vue'
 import Coupons from './components/Coupons.vue'
 import Images from './components/Images.vue'
 import Footer from './components/Footer.vue'
+
+
 
 export default {
   name: 'app',
