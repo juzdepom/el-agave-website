@@ -15,17 +15,37 @@
                             &nbsp;&nbsp;Back to Main Menu (don't save)
                         </a>
                         <a
-                            href="#app"
                             class="btn btn-success pull-right"
                             @click="save()"
+                            data-toggle="modal"
+                            data-target="#basicModal"
                             >
                             Save Changes
                         </a>
                 </nav>
             </div>
         </div>
+    <!-- @click="save()" -->
         <div class="container-fluid text-center admin-margins form-group">
             <br><br>
+            <!-- modal -->
+            <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                <div class="modal-dialog" >
+                    <div class="modal-content" style="background-color: white" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body" style="font-family: 'PT Sans', sans-serif;">
+                        <h3 style="font-family: 'Helvetica'">Saved!</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" @click="backToMain()">Back to Main Menu</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal -->
             <h1>&#9881; Welcome to the El Agave Admin! &#9881;</h1>
 
             <h2>Open Hours</h2>
@@ -102,21 +122,14 @@ export default {
             this.admin.menu = object;
         }
     },
-    // computed: {
-    //     menu(){
-    //         return JSON.stringify(this.admin.menu, null, 2)
-    //     }
-    // },
     methods: {
         save(){
-            // this.$http.put('data.json', this.admin)
-            //     .then(response => {
-            //         return response.json()
-            //     }, error => {
-            //         console.log(error)
-            //     });
-
-            // return JSON.stringify(data, null, 2)
+            this.$http.put('data.json', this.admin)
+                .then(response => {
+                    return response.json()
+                }, error => {
+                    console.log(error)
+                });
 
             console.log('saved!')
         }

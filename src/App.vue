@@ -53,7 +53,11 @@
         <h3>Thank you for visiting!</h3>
         <a class="btn btn-success admin" @click="login()" href="#admin">Admin Site</a>
         <br>Copyright © 2017 El Agave Restaurant. All rights reserved.
-        <br> Coded with ♥ by Julia Gao Miller | Design by W3layouts
+        <br> Coded with ♥ by
+        <a href="https://www.linkedin.com/in/julia-gao-miller/"
+          target="_blank"
+          style="color: white; text-decoration: underline">
+        Julia Gao Miller</a> | Design by W3layouts
       </footer-component>
     </div>
     <admin-component v-if="isAdmin" :backToMain="backToMain" :admin="admin" ></admin-component>
