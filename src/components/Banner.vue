@@ -41,8 +41,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     /* background: url(../images/b1.jpg) no-repeat 0px 0px; */
-	background: url(../images/bg-samish.png) no-repeat 0px 0px;
-	background: url(../images/clubhouse.png) no-repeat 0px 0px;
+	background: url(../images/bg-samish.jpg) no-repeat 0px 0px;
+	background: url(../images/clubhouse.jpg) no-repeat 0px 0px;
 	 background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;

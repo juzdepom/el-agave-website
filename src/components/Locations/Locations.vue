@@ -26,7 +26,7 @@ export default {
         samish(){
             var number = this.samishNumber
             var dic = {
-                backgroundUrl: "samish.png",
+                backgroundUrl: "samish.jpg",
                 title: "Location #1",
                 address: "207 N Samish Way",
                 city: "Bellingham",
@@ -39,7 +39,7 @@ export default {
         clubhouse(){
             var number = this.clubhouseNumber
             var dic = {
-                backgroundUrl: "clubhouse2.png",
+                backgroundUrl: "clubhouse2.jpg",
                 title: "Location #2",
                 address: "4 Club House Circle",
                 city: "Bellingham",
@@ -52,7 +52,7 @@ export default {
         harris(){
             var number = this.harrisNumber
             var dic = {
-                backgroundUrl: "harris.png",
+                backgroundUrl: "harris.jpg",
                 title: "Location #3",
                 address: "1111 Harris Ave",
                 city: "Bellingham",
