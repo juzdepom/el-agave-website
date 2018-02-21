@@ -1,6 +1,9 @@
 # el-agave-website
 
 > Website for El Agave Restaurant.
+> View Demo [Here](http://el-agave.torpedo.io/)
+
+![](agave.gif)
 
 ## Build Setup
 
